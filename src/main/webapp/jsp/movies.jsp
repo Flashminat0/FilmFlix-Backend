@@ -87,7 +87,7 @@
             <div class="row">
                 <div class="col">
                     <div class="embed-responsive embed-responsive-16by9">
-                        <video controls class="embed-responsive-item lazyload" data-src="vid/inception-trailer.mp4">
+                        <video controls class="embed-responsive-item lazyload" data-src="../vid/inception-trailer.mp4">
                             Your browser does not support HTML5 video.
                         </video>
                     </div>
