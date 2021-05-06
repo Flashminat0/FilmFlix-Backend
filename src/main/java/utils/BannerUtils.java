@@ -49,4 +49,24 @@ public class BannerUtils {
 
         return status;
     }
+
+
+    public static boolean DeleteBanner(Banner banner) {
+        boolean status = false;
+        try {
+            conn = ConnectToDB.getCon();
+            pst = conn.prepareStatement("DELETE  FROM  moviebanner WHERE movieid=?");
+            pst.setInt(1, banner.getMovieid());
+            int result = pst.executeUpdate();
+            if (result > 0) {
+                status = true;
+            }
+            conn.close();
+
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+
+        return status;
+    }
 }

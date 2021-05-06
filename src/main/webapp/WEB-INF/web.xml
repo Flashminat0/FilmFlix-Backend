@@ -41,7 +41,7 @@
     <!-- Delete Banner and Movie Name-->
     <servlet>
         <servlet-name>DeleteBanner</servlet-name>
-        <servlet-class>servlets.EditBannerServlet</servlet-class>
+        <servlet-class>servlets.DeleteBannerServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>DeleteBanner</servlet-name>
