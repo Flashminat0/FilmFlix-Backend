@@ -27,7 +27,8 @@ public class BannerServletForwarder extends HttpServlet {
 
 
         } else if (request.getParameter("edit-btn") != null) {
-
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/EditBanner");
+            dispatcher.forward(request, response);
 
         } else if (request.getParameter("delete-btn") != null) {
 

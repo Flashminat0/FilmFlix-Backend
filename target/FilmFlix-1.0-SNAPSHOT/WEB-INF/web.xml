@@ -22,4 +22,14 @@
         <servlet-name>CreateBanner</servlet-name>
         <url-pattern>/jsp/CreateBanner</url-pattern>
     </servlet-mapping>
+    
+    
+    <servlet>
+        <servlet-name>EditBanner</servlet-name>
+        <servlet-class>servlets.EditBannerServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EditBanner</servlet-name>
+        <url-pattern>/jsp/EditBanner</url-pattern>
+    </servlet-mapping>
 </web-app>
