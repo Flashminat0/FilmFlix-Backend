@@ -174,7 +174,7 @@
                         </div>
                         <div class="col offset-lg--1">
                             <form id="poster-select-form" data-form-type="blocs-form" class="animated fadeInRight"
-                                  action="bannercreate" method="POST" data-appear-anim-style="fadeInRight">
+                                  action="bannerAction" method="POST" data-appear-anim-style="fadeInRight">
                                 <div class="form-group">
                                     <label>
                                         Movie ID

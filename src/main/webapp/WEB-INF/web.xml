@@ -5,11 +5,11 @@
          version="4.0">
 
     <servlet>
-        <servlet-name>bannercreate</servlet-name>
-        <servlet-class>servlets.AddBannerLocation</servlet-class>
+        <servlet-name>BannerAction</servlet-name>
+        <servlet-class>servlets.BannerServletCUD</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>bannercreate</servlet-name>
-        <url-pattern>/jsp/bannercreate</url-pattern>
+        <servlet-name>BannerAction</servlet-name>
+        <url-pattern>/jsp/bannerAction</url-pattern>
     </servlet-mapping>
 </web-app>
