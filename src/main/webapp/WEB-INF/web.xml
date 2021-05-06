@@ -8,7 +8,7 @@
     <!--Banner Search -->
     <servlet>
         <servlet-name>SearchBanner</servlet-name>
-        <servlet-class>servlets.SearchBannerServlet</servlet-class>
+        <servlet-class>servlets.Banner.SearchBannerServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>SearchBanner</servlet-name>
@@ -29,7 +29,7 @@
     <!-- Create Banner and Movie Name-->
     <servlet>
         <servlet-name>CreateBanner</servlet-name>
-        <servlet-class>servlets.AddBannerServlet</servlet-class>
+        <servlet-class>servlets.Banner.AddBannerServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>CreateBanner</servlet-name>
@@ -40,7 +40,7 @@
     <!-- Edit Banner and Movie Name-->
     <servlet>
         <servlet-name>EditBanner</servlet-name>
-        <servlet-class>servlets.EditBannerServlet</servlet-class>
+        <servlet-class>servlets.Banner.EditBannerServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>EditBanner</servlet-name>
@@ -51,7 +51,7 @@
     <!-- Delete Banner and Movie Name-->
     <servlet>
         <servlet-name>DeleteBanner</servlet-name>
-        <servlet-class>servlets.DeleteBannerServlet</servlet-class>
+        <servlet-class>servlets.Banner.DeleteBannerServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>DeleteBanner</servlet-name>

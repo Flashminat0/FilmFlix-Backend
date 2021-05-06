@@ -1,4 +1,4 @@
-package servlets;
+package servlets.Banner;
 
 import model.Banner;
 import model.Movie;
@@ -10,8 +10,8 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
-@WebServlet(name = "AddBannerServlet", value = "/AddBannerServlet")
-public class AddBannerServlet extends HttpServlet {
+@WebServlet(name = "EditBannerServlet", value = "/EditBannerServlet")
+public class EditBannerServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -32,8 +32,8 @@ public class AddBannerServlet extends HttpServlet {
         movie.setMovieid(movieid);
         movie.setMoviename(moviename);
 
-        boolean statusAddBanner = BannerUtils.AddBanner(banner);
-        boolean statusAddMovie = MovieUtils.AddMovie(movie);
+        boolean statusAddBanner = BannerUtils.EditBanner(banner);
+        boolean statusAddMovie = MovieUtils.EditMovie(movie);
 
         if (statusAddBanner && statusAddMovie) {
             System.out.println("Sucess");

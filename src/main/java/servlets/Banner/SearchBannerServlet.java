@@ -1,4 +1,4 @@
-package servlets;
+package servlets.Banner;
 
 import javax.servlet.*;
 import javax.servlet.http.*;

@@ -1,4 +1,4 @@
-package servlets;
+package servlets.Banner;
 
 import model.Banner;
 import model.Movie;
