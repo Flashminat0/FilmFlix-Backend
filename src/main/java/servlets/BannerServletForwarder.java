@@ -31,7 +31,8 @@ public class BannerServletForwarder extends HttpServlet {
             dispatcher.forward(request, response);
 
         } else if (request.getParameter("delete-btn") != null) {
-
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/DeleteBanner");
+            dispatcher.forward(request, response);
         }
 
 

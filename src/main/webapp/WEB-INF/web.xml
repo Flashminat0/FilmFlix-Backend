@@ -4,6 +4,8 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 
+
+    <!--Banner Action forwarder-->
     <servlet>
         <servlet-name>BannerAction</servlet-name>
         <servlet-class>servlets.BannerServletForwarder</servlet-class>
@@ -14,6 +16,7 @@
     </servlet-mapping>
 
 
+    <!-- Create Banner and Movie Name-->
     <servlet>
         <servlet-name>CreateBanner</servlet-name>
         <servlet-class>servlets.AddBannerServlet</servlet-class>
@@ -22,8 +25,9 @@
         <servlet-name>CreateBanner</servlet-name>
         <url-pattern>/jsp/CreateBanner</url-pattern>
     </servlet-mapping>
-    
-    
+
+
+    <!-- Edit Banner and Movie Name-->
     <servlet>
         <servlet-name>EditBanner</servlet-name>
         <servlet-class>servlets.EditBannerServlet</servlet-class>
@@ -31,5 +35,16 @@
     <servlet-mapping>
         <servlet-name>EditBanner</servlet-name>
         <url-pattern>/jsp/EditBanner</url-pattern>
+    </servlet-mapping>
+
+
+    <!-- Delete Banner and Movie Name-->
+    <servlet>
+        <servlet-name>DeleteBanner</servlet-name>
+        <servlet-class>servlets.EditBannerServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteBanner</servlet-name>
+        <url-pattern>/jsp/DeleteBanner</url-pattern>
     </servlet-mapping>
 </web-app>
