@@ -3,6 +3,7 @@ package servlets;
 import model.Banner;
 import model.Movie;
 import utils.BannerUtils;
+import utils.MovieUtils;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -34,7 +35,9 @@ public class BannerServletCUD extends HttpServlet {
             movie.setMoviename(moviename);
 
             boolean statusAddBanner = BannerUtils.AddBanner(banner);
-            if (statusAddBanner) {
+            boolean statusAddMovie = MovieUtils.AddMovie(movie);
+
+            if (statusAddBanner && statusAddMovie) {
                 System.out.println("Sucess");
                 RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/movies.jsp");
                 dispatcher.forward(request, response);
