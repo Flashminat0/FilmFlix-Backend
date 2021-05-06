@@ -1,5 +1,6 @@
 package utils;
 
+import model.Banner;
 import model.Movie;
 
 import java.sql.Connection;
@@ -18,6 +19,27 @@ public class MovieUtils {
             pst = conn.prepareStatement("INSERT INTO moviename (movieid , moviename) VALUES (?,?)");
             pst.setInt(1, movie.getMovieid());
             pst.setString(2, movie.getMoviename());
+            int result = pst.executeUpdate();
+            if (result > 0) {
+                status = true;
+            }
+            conn.close();
+
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+
+        return status;
+    }
+
+    public static boolean EditMovie(Movie movie) {
+        boolean status = false;
+        try {
+            conn = ConnectToDB.getCon();
+            pst = conn.prepareStatement("UPDATE moviename SET movieid = ? , moviename = ? WHERE movieid = ?");
+            pst.setInt(1, movie.getMovieid());
+            pst.setString(2, movie.getMoviename());
+            pst.setInt(3, movie.getMovieid());
             int result = pst.executeUpdate();
             if (result > 0) {
                 status = true;
