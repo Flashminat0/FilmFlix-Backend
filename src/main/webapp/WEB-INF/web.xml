@@ -5,6 +5,16 @@
          version="4.0">
 
 
+    <!--Banner Search -->
+    <servlet>
+        <servlet-name>SearchBanner</servlet-name>
+        <servlet-class>servlets.SearchBannerServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SearchBanner</servlet-name>
+        <url-pattern>/jsp/bannerSearch</url-pattern>
+    </servlet-mapping>
+
     <!--Banner Action forwarder-->
     <servlet>
         <servlet-name>BannerAction</servlet-name>
