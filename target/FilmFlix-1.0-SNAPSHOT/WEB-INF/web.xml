@@ -5,6 +5,17 @@
          version="4.0">
 
 
+    <!--Banner-->
+    <!--Banner Search -->
+    <servlet>
+        <servlet-name>SearchBanner</servlet-name>
+        <servlet-class>servlets.Banner.SearchBannerServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SearchBanner</servlet-name>
+        <url-pattern>/jsp/bannerSearch</url-pattern>
+    </servlet-mapping>
+
     <!--Banner Action forwarder-->
     <servlet>
         <servlet-name>BannerAction</servlet-name>
@@ -15,36 +26,48 @@
         <url-pattern>/jsp/bannerAction</url-pattern>
     </servlet-mapping>
 
-
     <!-- Create Banner and Movie Name-->
     <servlet>
         <servlet-name>CreateBanner</servlet-name>
-        <servlet-class>servlets.AddBannerServlet</servlet-class>
+        <servlet-class>servlets.Banner.AddBannerServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>CreateBanner</servlet-name>
         <url-pattern>/jsp/CreateBanner</url-pattern>
     </servlet-mapping>
 
-
     <!-- Edit Banner and Movie Name-->
     <servlet>
         <servlet-name>EditBanner</servlet-name>
-        <servlet-class>servlets.EditBannerServlet</servlet-class>
+        <servlet-class>servlets.Banner.EditBannerServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>EditBanner</servlet-name>
         <url-pattern>/jsp/EditBanner</url-pattern>
     </servlet-mapping>
 
-
     <!-- Delete Banner and Movie Name-->
     <servlet>
         <servlet-name>DeleteBanner</servlet-name>
-        <servlet-class>servlets.DeleteBannerServlet</servlet-class>
+        <servlet-class>servlets.Banner.DeleteBannerServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>DeleteBanner</servlet-name>
         <url-pattern>/jsp/DeleteBanner</url-pattern>
     </servlet-mapping>
+    <!--END of Banner-->
+
+
+    <!--User-->
+    <!--AddUser-->
+    <servlet>
+        <servlet-name>AddUser</servlet-name>
+        <servlet-class>servlets.User.AddUserServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddUser</servlet-name>
+        <url-pattern>/jsp/singup-user</url-pattern>
+    </servlet-mapping>
+    <!--END of User-->
+
 </web-app>

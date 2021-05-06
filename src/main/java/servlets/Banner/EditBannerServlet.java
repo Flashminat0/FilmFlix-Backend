@@ -36,7 +36,7 @@ public class EditBannerServlet extends HttpServlet {
         boolean statusAddMovie = MovieUtils.EditMovie(movie);
 
         if (statusAddBanner && statusAddMovie) {
-            System.out.println("Sucess");
+            System.out.println("Success");
             RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/movies.jsp");
             dispatcher.forward(request, response);
         } else {
