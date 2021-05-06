@@ -6,10 +6,20 @@
 
     <servlet>
         <servlet-name>BannerAction</servlet-name>
-        <servlet-class>servlets.BannerServletCUD</servlet-class>
+        <servlet-class>servlets.BannerServletForwarder</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>BannerAction</servlet-name>
         <url-pattern>/jsp/bannerAction</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>CreateBanner</servlet-name>
+        <servlet-class>servlets.AddBannerServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CreateBanner</servlet-name>
+        <url-pattern>/jsp/CreateBanner</url-pattern>
     </servlet-mapping>
 </web-app>
