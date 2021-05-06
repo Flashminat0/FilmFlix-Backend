@@ -59,6 +59,14 @@
 
 
     <!--User-->
+    <servlet>
+        <servlet-name>UserForward</servlet-name>
+        <servlet-class>servlets.UserServletForwarder</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserForward</servlet-name>
+        <url-pattern>/jsp/update-details-form</url-pattern>
+    </servlet-mapping>
     <!--AddUser-->
     <servlet>
         <servlet-name>AddUser</servlet-name>
@@ -67,6 +75,16 @@
     <servlet-mapping>
         <servlet-name>AddUser</servlet-name>
         <url-pattern>/jsp/singup-user</url-pattern>
+    </servlet-mapping>
+
+    <!--Edit User-->
+    <servlet>
+        <servlet-name>EditUser</servlet-name>
+        <servlet-class>servlets.User.EditUserServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EditUser</servlet-name>
+        <url-pattern>/jsp/userEdit</url-pattern>
     </servlet-mapping>
     <!--END of User-->
 

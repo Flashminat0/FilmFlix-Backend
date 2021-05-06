@@ -111,7 +111,7 @@
                             <label>
                                 password
                             </label>
-                            <input id="password" class="form-control" type="password" required name="email"/>
+                            <input id="password" class="form-control" type="password" required name="password"/>
                         </div>
                         <div class="form-check">
                             <input class="form-check-input animated fadeIn animDelay1" type="checkbox" id="optin"
@@ -123,11 +123,11 @@
                             </label>
                         </div>
                         <button class="bloc-button btn btn-d btn-21-style animated vanishIn animDelay08 btn-lg"
-                                type="submit" data-appear-anim-style="vanishIn">
+                                type="submit" data-appear-anim-style="vanishIn" id="user-edit-btn"  name="user-edit-btn">
                             Edit
                         </button>
                         <button class="bloc-button btn btn-d btn-lg btn-21-style animated vanishIn animDelay08 float-lg-right"
-                                type="submit" data-appear-anim-style="vanishIn">
+                                type="submit" data-appear-anim-style="vanishIn" id="user-delete-btn"  name="user-delete-btn">
                             Delete
                         </button>
                     </form>

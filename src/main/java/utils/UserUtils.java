@@ -29,4 +29,27 @@ public class UserUtils {
 
         return status;
     }
+
+    public static boolean EditUser(User user) {
+        boolean status = false;
+        try {
+            conn = ConnectToDB.getCon();
+            pst = conn.prepareStatement("UPDATE users SET email = ? , password = ? , name = ? WHERE email = ?");
+            //log userid ->  id
+            pst.setString(1, user.getEmail());
+            pst.setString(2, user.getPassword());
+            pst.setString(3, user.getName());
+            pst.setString(4, user.getEmail());
+            int result = pst.executeUpdate();
+            if (result > 0) {
+                status = true;
+            }
+            conn.close();
+
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+
+        return status;
+    }
 }

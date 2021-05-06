@@ -121,18 +121,18 @@
                         <div class="form-group">
                             <input id="signup_name" class="form-control animated puffIn" required
                                    data-validation-required-message="Please enter your name" placeholder="Name"
-                                   name="name_33921" data-appear-anim-style="puffIn"/>
+                                   name="signup_name" data-appear-anim-style="puffIn"/>
                         </div>
                         <div class="form-group">
                             <input id="signup_email" class="form-control animated puffIn animDelay02" type="email"
                                    required data-error-validation-msg="Enter a valid Email"
                                    data-validation-required-message="Please enter a email" placeholder="Email"
-                                   name="email_33921" data-appear-anim-style="puffIn"/>
+                                   name="signup_email" data-appear-anim-style="puffIn"/>
                         </div>
                         <div class="form-group">
                             <input id="signup_password" class="form-control animated puffIn animDelay04" type="password"
                                    required maxlength="10" data-validation-required-message="Enter a password"
-                                   placeholder="Password" name="pass_123" data-appear-anim-style="puffIn"/>
+                                   placeholder="Password" name="signup_password" data-appear-anim-style="puffIn"/>
                         </div>
                         <div class="licence form-check">
                             <input class="form-check-input animDelay08 animated puffIn animSpeedLazy" type="checkbox"
