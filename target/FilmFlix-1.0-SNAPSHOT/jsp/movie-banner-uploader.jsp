@@ -165,7 +165,7 @@
                 <div class="col">
                     <div class="row">
                         <div class="col-lg-5 animated puffIn" data-appear-anim-style="puffIn">
-                            <img src="../img/lazyload-ph.png" data-src="<%= request.getAttribute("filename")  %>"
+                            <img src="../img/lazyload-ph.png" data-src="<%= request.getAttribute("bannerlocation")  %>"
                                  class="img-fluid mx-auto d-block img-bloc-18-style animated bounceInUp lazyload"
                                  alt="placeholder image" data-appear-anim-style="bounceInUp"/><a
                                 href="movie-banner-uploader.jsp"

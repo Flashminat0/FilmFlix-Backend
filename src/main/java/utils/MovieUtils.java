@@ -4,6 +4,7 @@ import model.Movie;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 public class MovieUtils {
 
@@ -69,5 +70,26 @@ public class MovieUtils {
         }
 
         return status;
+    }
+
+    public static String SelectMovie(Movie movie) {
+        String movieName = null;
+        try {
+            conn = ConnectToDB.getCon();
+            pst = conn.prepareStatement("SELECT  moviename FROM  moviename WHERE movieid=?", ResultSet.TYPE_SCROLL_SENSITIVE,
+                    ResultSet.CONCUR_UPDATABLE);
+            pst.setInt(1, movie.getMovieid());
+            ResultSet result = pst.executeQuery();
+
+            if (result.first()) {
+                movieName = result.getString("moviename");
+                movie.setMoviename(movieName);
+            }
+            conn.close();
+
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+        return movieName;
     }
 }

@@ -1,7 +1,9 @@
 package servlets.Banner;
 
 import model.Banner;
+import model.Movie;
 import utils.BannerUtils;
+import utils.MovieUtils;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -12,21 +14,23 @@ import java.io.IOException;
 public class SearchBannerServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        int neededBanner = Integer.parseInt(request.getParameter("search_movie_id_banner"));
+        int search_id_movie_banner = Integer.parseInt(request.getParameter("search_movie_id_banner"));
 
         Banner banner = new Banner();
-        banner.setMovieid(neededBanner);
+        banner.setMovieid(search_id_movie_banner);
+
+        Movie movie = new Movie();
+        movie.setMovieid(search_id_movie_banner);
 
         String statusSelectBanner = BannerUtils.SelectBanner(banner);
+        String movieName = MovieUtils.SelectMovie(movie);
 
-
-        if (statusSelectBanner != null) {
+        if (statusSelectBanner != null && movieName != null) {
             System.out.println("Success");
-            request.setAttribute("movieid" , banner.getMovieid());
-//            request.setAttribute("moviename" ,movie.getMoviename());
-            request.setAttribute("bannerlocation" , banner.getBannerlocation());
+            request.setAttribute("movieid", banner.getMovieid());
+            request.setAttribute("moviename", movie.getMoviename());
+            request.setAttribute("bannerlocation", banner.getBannerlocation());
 
-            request.setAttribute("filename",statusSelectBanner);
             RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/movie-banner-uploader.jsp");
             dispatcher.forward(request, response);
 
@@ -34,9 +38,10 @@ public class SearchBannerServlet extends HttpServlet {
             System.out.println("waradi");
         }
     }
-        @Override
-        protected void doPost (HttpServletRequest request, HttpServletResponse response) throws
-        ServletException, IOException {
 
-        }
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws
+            ServletException, IOException {
+
     }
+}

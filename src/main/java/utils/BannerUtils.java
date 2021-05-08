@@ -82,6 +82,7 @@ public class BannerUtils {
 
             if (result.first()) {
                 filepath = result.getString("bannerlocation");
+                banner.setBannerlocation(filepath);
             }
             conn.close();
 
