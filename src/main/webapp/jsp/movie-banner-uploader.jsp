@@ -165,7 +165,7 @@
                 <div class="col">
                     <div class="row">
                         <div class="col-lg-5 animated puffIn" data-appear-anim-style="puffIn">
-                            <img src="../img/lazyload-ph.png" data-src="../img/banner/demon-slayer-banner.jpg"
+                            <img src="../img/lazyload-ph.png" data-src="<%= request.getAttribute("filename")  %>"
                                  class="img-fluid mx-auto d-block img-bloc-18-style animated bounceInUp lazyload"
                                  alt="placeholder image" data-appear-anim-style="bounceInUp"/><a
                                 href="movie-banner-uploader.jsp"
@@ -180,21 +180,21 @@
                                         Movie ID
                                     </label>
                                     <input id="movieid" name="movieid" class="form-control animated bounceInRight animDelay04" required
-                                           data-appear-anim-style="bounceInRight"/>
+                                           data-appear-anim-style="bounceInRight" placeholder=<%= request.getAttribute("movieid") %>/>
                                 </div>
                                 <div class="form-group">
                                     <label>
                                         Movie Name
                                     </label>
                                     <input id="moviename" name="moviename" class="form-control animated bounceInRight animDelay08" required
-                                            data-appear-anim-style="bounceInRight"/>
+                                            data-appear-anim-style="bounceInRight" placeholder=<%= request.getAttribute("moviename") %>/>
                                 </div>
                                 <div class="form-group">
                                     <label>
                                         Movie Banner File Location
                                     </label>
                                     <input id="bannerlocation" name="bannerlocation" class="form-control animated bounceInRight animDelay1" required
-                                            data-appear-anim-style="bounceInRight"/>
+                                            data-appear-anim-style="bounceInRight" placeholder=<%= request.getAttribute("bannerlocation") %>/>
                                     <div class="object-hidden" id="edit-or-delete">
                                         <div class="row buttons-below-banner-submit animated bounceInUp animDelay1"
                                              data-appear-anim-style="bounceInUp">

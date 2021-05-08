@@ -71,8 +71,8 @@ public class BannerUtils {
         return status;
     }
 
-    public static boolean SelectBanner(Banner banner) {
-        boolean status = false;
+    public static String SelectBanner(Banner banner) {
+        String filepath = "../img/standard-banner.jpg";
         try {
             conn = ConnectToDB.getCon();
             pst = conn.prepareStatement("SELECT  bannerlocation FROM  moviebanner WHERE movieid=?", ResultSet.TYPE_SCROLL_SENSITIVE,
@@ -80,13 +80,14 @@ public class BannerUtils {
             pst.setInt(1, banner.getMovieid());
             ResultSet result = pst.executeQuery();
 
-            result.first();
-            System.out.println(result.getString("bannerlocation"));
+            if (result.first()) {
+                filepath = result.getString("bannerlocation");
+            }
             conn.close();
 
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
-        return status;
+        return filepath;
     }
 }

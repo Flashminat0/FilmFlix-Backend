@@ -17,12 +17,19 @@ public class SearchBannerServlet extends HttpServlet {
         Banner banner = new Banner();
         banner.setMovieid(neededBanner);
 
-        boolean statusSelectBanner = BannerUtils.SelectBanner(banner);
+        String statusSelectBanner = BannerUtils.SelectBanner(banner);
 
-        if (statusSelectBanner) {
+
+        if (statusSelectBanner != null) {
             System.out.println("Success");
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/movies.jsp");
+            request.setAttribute("movieid" , banner.getMovieid());
+//            request.setAttribute("moviename" ,movie.getMoviename());
+            request.setAttribute("bannerlocation" , banner.getBannerlocation());
+
+            request.setAttribute("filename",statusSelectBanner);
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/movie-banner-uploader.jsp");
             dispatcher.forward(request, response);
+
         } else {
             System.out.println("waradi");
         }
