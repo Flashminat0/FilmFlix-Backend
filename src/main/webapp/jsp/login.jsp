@@ -90,11 +90,11 @@
                         <div class="form-group">
                             <input id="login_email" class="form-control field-style animated puffIn" required
                                    type="email" data-error-validation-msg="Not a valid email address"
-                                   placeholder="Email" name="email_38456" data-appear-anim-style="puffIn"/>
+                                   placeholder="Email" name="login_email" data-appear-anim-style="puffIn"/>
                         </div>
                         <div class="form-group">
                             <input id="login_password" class="form-control animated puffIn animDelay02 none"
-                                   type="password" required placeholder="Password" name="password_38456"
+                                   type="password" required placeholder="Password" name="login_password"
                                    data-appear-anim-style="puffIn"/>
                         </div>
                         <a href="#"

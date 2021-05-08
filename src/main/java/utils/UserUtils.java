@@ -52,4 +52,24 @@ public class UserUtils {
 
         return status;
     }
+
+    public static boolean SelectUser(User user) {
+        boolean status = false;
+        try {
+            conn = ConnectToDB.getCon();
+            pst = conn.prepareStatement("SELECT email , password , name , userd FROM  users WHERE email = ? AND password = ?");
+            pst.setString(1, user.getEmail());
+            pst.setString(2, user.getPassword());
+            boolean result = pst.execute();
+            if (result) {
+                status = true;
+            }
+            conn.close();
+
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+
+        return status;
+    }
 }
