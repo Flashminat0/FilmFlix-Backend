@@ -4,6 +4,7 @@ import model.Banner;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 public class BannerUtils {
     private static Connection conn;
@@ -61,6 +62,26 @@ public class BannerUtils {
             if (result > 0) {
                 status = true;
             }
+            conn.close();
+
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+
+        return status;
+    }
+
+    public static boolean SelectBanner(Banner banner) {
+        boolean status = false;
+        try {
+            conn = ConnectToDB.getCon();
+            pst = conn.prepareStatement("SELECT  bannerlocation FROM  moviebanner WHERE movieid=?", ResultSet.TYPE_SCROLL_SENSITIVE,
+                    ResultSet.CONCUR_UPDATABLE);
+            pst.setInt(1, banner.getMovieid());
+            ResultSet result = pst.executeQuery();
+
+            result.first();
+            System.out.println(result.getString("bannerlocation"));
             conn.close();
 
         } catch (Exception ex) {

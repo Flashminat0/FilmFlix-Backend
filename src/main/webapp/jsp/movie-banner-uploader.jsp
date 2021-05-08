@@ -118,7 +118,7 @@
                         </div>
                         <div class="col">
                             <form id="banner-search-form" data-form-type="blocs-form" action="bannerSearch"
-                                  method="POST">
+                                  method="GET">
                                 <div class="form-group">
                                     <input id="search_movie_id_banner" name="search_movie_id_banner" class="form-control animated bounceInRight"
                                            required  placeholder="🔍 Search movie ID"
