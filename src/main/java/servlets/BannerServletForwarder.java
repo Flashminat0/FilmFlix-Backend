@@ -1,10 +1,5 @@
 package servlets;
 
-import model.Banner;
-import model.Movie;
-import utils.BannerUtils;
-import utils.MovieUtils;
-
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
