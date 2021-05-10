@@ -75,7 +75,8 @@ public class BannerUtils {
         String filepath = "../img/standard-banner.jpg";
         try {
             conn = ConnectToDB.getCon();
-            pst = conn.prepareStatement("SELECT  bannerlocation FROM  moviebanner WHERE movieid=?", ResultSet.TYPE_SCROLL_SENSITIVE,
+            pst = conn.prepareStatement("SELECT  bannerlocation FROM  moviebanner WHERE movieid=?",
+                    ResultSet.TYPE_SCROLL_SENSITIVE,
                     ResultSet.CONCUR_UPDATABLE);
             pst.setInt(1, banner.getMovieid());
             ResultSet result = pst.executeQuery();
