@@ -95,23 +95,23 @@
                           method="POST">
                         <div class="form-group animated fadeIn animDelay04" data-appear-anim-style="fadeIn">
                             <label>
-                                <%= session.getAttribute("name") %>
+                                name
                             </label>
-                            <input id="name" class="form-control animated fadeIn" required name="name"
+                            <input id="name" class="form-control animated fadeIn" required name="name" placeholder="<%= session.getAttribute("name") %>"
                                    data-appear-anim-style="fadeIn"/>
                         </div>
                         <div class="form-group animated fadeIn animDelay06" data-appear-anim-style="fadeIn">
                             <label>
-                                <%= session.getAttribute("email") %>
+                                email
                             </label>
                             <input id="email" class="form-control" type="email"
-                                   data-error-validation-msg="Not a valid email address" required name="email"/>
+                                   data-error-validation-msg="Not a valid email address" required name="email" placeholder="<%= session.getAttribute("email") %>"/>
                         </div>
                         <div class="form-group animated fadeIn animDelay08" data-appear-anim-style="fadeIn">
                             <label>
-                                <%= session.getAttribute("password") %>
+                                password
                             </label>
-                            <input id="password" class="form-control" type="password" required name="password"/>
+                            <input id="password" class="form-control" type="password" required name="password" placeholder="<%= session.getAttribute("password") %>"/>
                         </div>
                         <div class="form-check">
                             <input class="form-check-input animated fadeIn animDelay1" type="checkbox" id="optin"
