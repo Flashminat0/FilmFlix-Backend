@@ -18,5 +18,9 @@ public class UserServletForwarder extends HttpServlet {
             RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/userEdit");
             dispatcher.forward(request, response);
         }
+        else if (request.getParameter("user-delete-btn") != null){
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/userDelete");
+            dispatcher.forward(request,response);
+        }
     }
 }

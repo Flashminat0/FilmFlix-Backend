@@ -103,9 +103,22 @@
         <url-pattern>/jsp/userEdit</url-pattern>
     </servlet-mapping>
     <!--END of Edit User-->
+    <!--Delete User-->
+    <servlet>
+        <servlet-name>DeleteUser</servlet-name>
+        <servlet-class>servlets.User.DeleteUserServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteUser</servlet-name>
+        <url-pattern>/jsp/userDelete</url-pattern>
+    </servlet-mapping>
+    <!--End of Delete User-->
 
-<!--Film-->
-<!--Add Film-->
+    <!--End of User-->
+
+
+    <!--Film-->
+    <!--Add Film-->
     <servlet>
         <servlet-name>AddFilm</servlet-name>
         <servlet-class>servlets.Film.AddFilmServlet</servlet-class>
@@ -114,8 +127,8 @@
         <servlet-name>AddFilm</servlet-name>
         <url-pattern>/jsp/AddFilm</url-pattern>
     </servlet-mapping>
-<!--End of Add Film-->
+    <!--End of Add Film-->
 
-<!--End of Film-->
+    <!--End of Film-->
 
 </web-app>

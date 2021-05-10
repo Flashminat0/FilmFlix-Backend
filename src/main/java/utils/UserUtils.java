@@ -87,4 +87,27 @@ public class UserUtils {
 
         return status;
     }
+
+    public static boolean DeleteUser(User user) {
+        boolean status = false;
+        try {
+            conn = ConnectToDB.getCon();
+            pst = conn.prepareStatement("DELETE FROM  users WHERE email = ? AND password = ?",
+                    ResultSet.TYPE_SCROLL_SENSITIVE,
+                    ResultSet.CONCUR_UPDATABLE);
+            pst.setString(1, user.getEmail());
+            pst.setString(2, user.getPassword());
+            int result = pst.executeUpdate();
+
+            if (result > 0) {
+                status = true;
+            }
+            conn.close();
+
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+
+        return status;
+    }
 }
