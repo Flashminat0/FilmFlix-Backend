@@ -91,24 +91,24 @@
 							<button class="btn btn-d btn-lg bloc-button float-lg-right btn-file-upload-style animated vanishIn animDelay06" type="submit" id="mov-upload-file-upload-btn" data-appear-anim-style="vanishIn">
 								File Upload
 							</button>
-							<form id="mov-upload-form" data-form-type="blocs-form" action="custom-action-url" method="POST">
+							<form id="mov-upload-form" data-form-type="blocs-form" action="AddFilm" method="POST">
 								<div class="form-group upload-form-begining-txt">
 									<label>
-										File Name
+										Movie File Name
 									</label>
-									<input id="mov_upload_file_name_txt" class="form-control" required name="mov_upload_file_name_txt" />
+									<input id="mov_upload_file_name_txt" class="form-control" required name="file_Name" />
 									<div class="form-group upload-from-second-label">
 										<label>
-											Film ID
+											Movie ID
 										</label>
-										<input class="form-control" id="mov_upload_film_id_txt" required name="mov_upload_film_id_txt" />
+										<input class="form-control" id="mov_upload_film_id_txt" required name="movie_ID" />
 									</div>
 								</div>
 								<div class="form-group">
 									<label>
-										Film File Path<br>
+										Movie File Path<br>
 									</label>
-									<input id="mov_upload_film_path_txt" class="form-control" required name="mov_upload_film_path_txt" />
+									<input id="mov_upload_film_path_txt" class="form-control" required name="file_Path" />
 								</div> 
 								<button class="bloc-button btn btn-d btn-lg btn-block upload-submit-btn animated vanishIn animDelay08" type="submit" id="mov-upload-submit-btn" data-appear-anim-style="vanishIn">
 									Submit

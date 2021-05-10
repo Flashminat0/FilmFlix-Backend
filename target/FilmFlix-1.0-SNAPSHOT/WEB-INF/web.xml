@@ -104,4 +104,18 @@
     </servlet-mapping>
     <!--END of Edit User-->
 
+<!--Film-->
+<!--Add Film-->
+    <servlet>
+        <servlet-name>AddFilm</servlet-name>
+        <servlet-class>servlets.Film.AddFilmServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddFilm</servlet-name>
+        <url-pattern>/jsp/AddFilm</url-pattern>
+    </servlet-mapping>
+<!--End of Add Film-->
+
+<!--End of Film-->
+
 </web-app>
