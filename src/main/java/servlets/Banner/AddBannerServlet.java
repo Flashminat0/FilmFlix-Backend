@@ -37,7 +37,7 @@ public class AddBannerServlet extends HttpServlet {
 
         if (statusAddBanner && statusAddMovie) {
             System.out.println("Success");
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/movies.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/browse.jsp");
             dispatcher.forward(request, response);
         } else {
             System.out.println("waradi");

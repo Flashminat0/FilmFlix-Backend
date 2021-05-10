@@ -95,21 +95,21 @@
                           method="POST">
                         <div class="form-group animated fadeIn animDelay04" data-appear-anim-style="fadeIn">
                             <label>
-                                Name
+                                <%= session.getAttribute("name") %>
                             </label>
                             <input id="name" class="form-control animated fadeIn" required name="name"
                                    data-appear-anim-style="fadeIn"/>
                         </div>
                         <div class="form-group animated fadeIn animDelay06" data-appear-anim-style="fadeIn">
                             <label>
-                                Email
+                                <%= session.getAttribute("email") %>
                             </label>
                             <input id="email" class="form-control" type="email"
                                    data-error-validation-msg="Not a valid email address" required name="email"/>
                         </div>
                         <div class="form-group animated fadeIn animDelay08" data-appear-anim-style="fadeIn">
                             <label>
-                                password
+                                <%= session.getAttribute("password") %>
                             </label>
                             <input id="password" class="form-control" type="password" required name="password"/>
                         </div>

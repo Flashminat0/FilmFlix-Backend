@@ -4,6 +4,7 @@ import model.User;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 public class UserUtils {
     private static Connection conn;
@@ -57,11 +58,25 @@ public class UserUtils {
         boolean status = false;
         try {
             conn = ConnectToDB.getCon();
-            pst = conn.prepareStatement("SELECT email , password , name , userd FROM  users WHERE email = ? AND password = ?");
+            pst = conn.prepareStatement("SELECT email , password , name , userid FROM  users WHERE email = ? AND password = ?",
+                    ResultSet.TYPE_SCROLL_SENSITIVE,
+                    ResultSet.CONCUR_UPDATABLE);
             pst.setString(1, user.getEmail());
             pst.setString(2, user.getPassword());
-            boolean result = pst.execute();
-            if (result) {
+            ResultSet result = pst.executeQuery();
+
+            result.next();
+            String email = result.getString("email");
+            String password = result.getString("password");
+            String name = result.getString("name");
+            String userid = result.getString("userid");
+
+            user.setUserID(Integer.parseInt(userid));
+            user.setEmail(email);
+            user.setPassword(password);
+            user.setName(name);
+
+            if (result.first()) {
                 status = true;
             }
             conn.close();
