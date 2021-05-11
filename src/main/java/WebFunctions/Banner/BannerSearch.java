@@ -1,4 +1,4 @@
-package DTO.Banner;
+package WebFunctions.Banner;
 
 public class BannerSearch {
 

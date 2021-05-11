@@ -55,6 +55,19 @@
         <servlet-name>DeleteBanner</servlet-name>
         <url-pattern>/jsp/DeleteBanner</url-pattern>
     </servlet-mapping>
+    <!--END Delete Banner and Movie Name-->
+
+    <!--Randomize browse page with banners-->
+    <servlet>
+        <servlet-name>RandomizeBrowse</servlet-name>
+        <servlet-class>servlets.Banner.RandomizeBannersServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RandomizeBrowse</servlet-name>
+        <url-pattern>/jsp/browse1.jsp</url-pattern>
+    </servlet-mapping>
+    <!--END of Randomize browse page with banners-->
+
     <!--END of Banner-->
 
 

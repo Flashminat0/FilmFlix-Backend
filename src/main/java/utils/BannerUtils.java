@@ -84,6 +84,7 @@ public class BannerUtils {
             if (result.first()) {
                 filepath = result.getString("bannerlocation");
                 banner.setBannerlocation(filepath);
+
             }
             conn.close();
 
@@ -91,5 +92,25 @@ public class BannerUtils {
             System.out.println(ex.getMessage());
         }
         return filepath;
+    }
+
+    public static boolean SelectRandom(Banner banner) {
+        boolean status = false;
+        try {
+            conn = ConnectToDB.getCon();
+            pst = conn.prepareStatement("SELECT movieid FROM moviebanner ORDER BY RAND() LIMIT 1",
+                    ResultSet.TYPE_SCROLL_SENSITIVE,
+                    ResultSet.CONCUR_UPDATABLE);
+            ResultSet result = pst.executeQuery();
+            if (result.first()) {
+                banner.setMovieid(Integer.parseInt(result.getString("movieid")));
+                status = true;
+            }
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+
+
+        return status;
     }
 }

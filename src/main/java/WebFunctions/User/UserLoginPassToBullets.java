@@ -1,4 +1,4 @@
-package DTO.User;
+package WebFunctions.User;
 
 public class UserLoginPassToBullets {
     public static String passwordTxtToBullets(String raw_password) {

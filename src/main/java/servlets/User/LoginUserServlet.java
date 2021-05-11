@@ -1,6 +1,6 @@
 package servlets.User;
 
-import DTO.User.UserLoginPassToBullets;
+import WebFunctions.User.UserLoginPassToBullets;
 import model.User;
 import utils.UserUtils;
 
