@@ -2,7 +2,7 @@
 <%
     String bannerPath = "../img/banner/";
     if (request.getAttribute("bannerlocation") == null) {
-        request.setAttribute("showthisbanner", bannerPath + "adventure-time-bannner.png");
+        request.setAttribute("showthisbanner","../img/placeholder.png");
 
     } else {
         request.setAttribute("showthisbanner", bannerPath + request.getAttribute("bannerlocation"));

@@ -2,7 +2,7 @@
 <%
     String bannerPath = "../img/banner/";
     if (request.getAttribute("bannerlocation") == null) {
-        request.setAttribute("showthisbanner", bannerPath + "adventure-time-bannner.png");
+        request.setAttribute("showthisbanner","../img/placeholder.png");
 
     } else {
         request.setAttribute("showthisbanner", bannerPath + request.getAttribute("bannerlocation"));
@@ -198,7 +198,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>
-                                        Movie Banner File Location
+                                        Movie Banner File Name
                                     </label>
                                     <input id="bannerlocation" name="bannerlocation"
                                            class="form-control animated bounceInRight animDelay1" required
