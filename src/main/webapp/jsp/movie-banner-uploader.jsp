@@ -17,7 +17,6 @@
     if (request.getAttribute("bannerlocation") == null) {
         request.setAttribute("bannerlocation", "");
     }
-//    request.getAttribute("bannerlocation");
 %>
 <!doctype html>
 <html lang="en">
