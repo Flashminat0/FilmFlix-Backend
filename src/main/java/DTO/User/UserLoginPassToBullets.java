@@ -2,14 +2,13 @@ package DTO.User;
 
 public class UserLoginPassToBullets {
     public static String passwordTxtToBullets(String raw_password) {
-
-        char[] bullets = raw_password.toCharArray();
-        int lettersInbullets = bullets.length;
+        String bulletPassword = "";
+        int lettersInBullets = raw_password.length();
         do {
-            bullets[lettersInbullets - 1] = '*';
-            lettersInbullets = lettersInbullets - 1;
-        } while (lettersInbullets > 0);
+            lettersInBullets = lettersInBullets - 1;
+            bulletPassword = bulletPassword.concat("*");
+        } while (lettersInBullets > 0);
 
-        return bullets.toString();
+        return bulletPassword;
     }
 }
