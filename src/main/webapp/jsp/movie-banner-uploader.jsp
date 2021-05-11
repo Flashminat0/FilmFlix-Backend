@@ -1,9 +1,23 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%
+    String bannerPath = "../img/banner/";
     if (request.getAttribute("bannerlocation") == null) {
-        request.setAttribute("bannerlocation", "../img/banner/adventure-time-bannner.png");
+        request.setAttribute("showthisbanner", bannerPath + "adventure-time-bannner.png");
+
+    } else {
+        request.setAttribute("showthisbanner", bannerPath + request.getAttribute("bannerlocation"));
     }
-    request.getAttribute("bannerlocation");
+
+    if (request.getAttribute("movieid") == null) {
+        request.setAttribute("movieid", "");
+    }
+    if (request.getAttribute("moviename") == null) {
+        request.setAttribute("moviename", "");
+    }
+    if (request.getAttribute("bannerlocation") == null) {
+        request.setAttribute("bannerlocation", "");
+    }
+//    request.getAttribute("bannerlocation");
 %>
 <!doctype html>
 <html lang="en">
@@ -155,7 +169,7 @@
                 <div class="col">
                     <div class="row">
                         <div class="col-lg-5 animated puffIn" data-appear-anim-style="puffIn">
-                            <img src="../img/lazyload-ph.png" data-src="<%= request.getAttribute("bannerlocation")%>"
+                            <img src="../img/lazyload-ph.png" data-src="<%= request.getAttribute("showthisbanner")%>"
                                  class="img-fluid mx-auto d-block img-bloc-18-style animated bounceInUp lazyload"
                                  alt="placeholder image" data-appear-anim-style="bounceInUp"/><a
                                 href="movie-banner-uploader.jsp"
