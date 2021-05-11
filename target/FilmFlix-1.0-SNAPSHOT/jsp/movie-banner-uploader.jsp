@@ -2,8 +2,7 @@
 <%
     String bannerPath = "../img/banner/";
     if (request.getAttribute("bannerlocation") == null) {
-        request.setAttribute("showthisbanner","../img/placeholder.png");
-
+        request.setAttribute("showthisbanner", "../img/placeholder.png");
     } else {
         request.setAttribute("showthisbanner", bannerPath + request.getAttribute("bannerlocation"));
     }
@@ -16,6 +15,14 @@
     }
     if (request.getAttribute("bannerlocation") == null) {
         request.setAttribute("bannerlocation", "");
+    }
+    if (session.getAttribute("email") == null) {
+        request.setAttribute("loginPageStatus", "Log in");
+        request.setAttribute("BrowseAccess", "");
+    }
+    if (session.getAttribute("email") != null) {
+        request.setAttribute("loginPageStatus", "Log out");
+        request.setAttribute("BrowseAccess", "Browse");
     }
 %>
 <!doctype html>
@@ -86,10 +93,14 @@
                                     <a href="movie-banner-uploader.jsp" class="a-btn nav-link">movie-banner-uploader</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="browse.jsp" class="nav-link a-btn">Browse</a>
+                                    <a href="browse.jsp"
+                                       class="nav-link a-btn"><%= request.getAttribute("BrowseAccess")%>
+                                    </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="login.jsp" class="nav-link a-btn">Login</a>
+                                    <a href="login.jsp"
+                                       class="nav-link a-btn"><%= request.getAttribute("loginPageStatus")%>
+                                    </a>
                                 </li>
                             </ul>
                         </div>
@@ -198,7 +209,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>
-                                        Movie Banner File Location
+                                        Movie Banner File Name
                                     </label>
                                     <input id="bannerlocation" name="bannerlocation"
                                            class="form-control animated bounceInRight animDelay1" required
