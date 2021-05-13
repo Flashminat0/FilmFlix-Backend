@@ -1,4 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%
+
+%>
 <!doctype html>
 <html lang="en">
 <head>
@@ -196,7 +199,7 @@
                                          data-tilt-glare="true" data-tilt-maxglare=".5" used-anim-style="vanishIn"
                                          data-appear-anim-style="vanishIn" used-anim-delay="animDelay02">
                                         <img class="hover-tilt-img-item img-fluid lazyload" src="../img/lazyload-ph.png"
-                                             data-src="../img/banner/inception-banner.jpg" alt="placeholder image">
+                                             data-src="<%= request.getAttribute("BannerImage5") %>" alt="placeholder image">
                                         <h3 class="hover-tilt-label" style="font-family: Lato; font-weight: 900;">Film
                                             name</h3>
                                     </div>
@@ -230,28 +233,28 @@
                         <div class="row row-style">
                             <div class="col">
                                 <a href="movies.jsp"><img src="../img/lazyload-ph.png"
-                                                          data-src="../img/banner/adventure-time-bannner.png"
+                                                          data-src="<%= request.getAttribute("BannerImage1") %>"
                                                           class="img-fluid mx-auto d-block animDelay08 animated bounceInLeft lazyload"
                                                           alt="placeholder image" data-appear-anim-style="bounceInLeft"
                                                           id="recommend-1"/></a>
                             </div>
                             <div class="col">
                                 <a href="movies.jsp"><img src="../img/lazyload-ph.png"
-                                                          data-src="../img/banner/love-death-robots-banner.jpg"
+                                                          data-src="<%= request.getAttribute("BannerImage2") %>"
                                                           class="img-fluid mx-auto d-block animDelay06 animated bounceInLeft lazyload"
                                                           alt="placeholder image" data-appear-anim-style="bounceInLeft"
                                                           id="recommend-2"/></a>
                             </div>
                             <div class="col">
                                 <a href="movies.jsp"><img src="../img/lazyload-ph.png"
-                                                          data-src="../img/banner/got-banner.jpg"
+                                                          data-src="<%= request.getAttribute("BannerImage3") %>"
                                                           class="img-fluid mx-auto d-block animDelay04 animated bounceInLeft lazyload"
                                                           alt="placeholder image" data-appear-anim-style="bounceInLeft"
                                                           id="recommend-3"/></a>
                             </div>
                             <div class="col">
                                 <a href="movies.jsp"><img src="../img/lazyload-ph.png"
-                                                          data-src="../img/banner/demon-slayer-banner.jpg"
+                                                          data-src="<%= request.getAttribute("BannerImage4") %>"
                                                           class="img-fluid mx-auto d-block animDelay02 animated bounceInLeft lazyload"
                                                           alt="placeholder image" data-appear-anim-style="bounceInLeft"
                                                           id="recommend-4"/></a>
@@ -263,7 +266,7 @@
                             </div>
                             <div class="col">
                                 <a href="movies.jsp"><img src="../img/lazyload-ph.png"
-                                                          data-src="../img/banner/inception-banner.jpg"
+                                                          data-src="<%= request.getAttribute("BannerImage5") %>"
                                                           class="img-fluid img-last-container img-bloc-11-style none pulse-hvr animated bounceInDown mx-auto d-block lazyload"
                                                           alt="placeholder image" data-appear-anim-style="bounceInDown"
                                                           id="recommend-star"/></a>

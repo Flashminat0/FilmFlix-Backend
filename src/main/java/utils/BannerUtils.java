@@ -5,6 +5,7 @@ import model.Banner;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.Vector;
 
 public class BannerUtils {
     private static Connection conn;
@@ -75,7 +76,8 @@ public class BannerUtils {
         String filepath = "../img/standard-banner.jpg";
         try {
             conn = ConnectToDB.getCon();
-            pst = conn.prepareStatement("SELECT  bannerlocation FROM  moviebanner WHERE movieid=?", ResultSet.TYPE_SCROLL_SENSITIVE,
+            pst = conn.prepareStatement("SELECT  bannerlocation FROM  moviebanner WHERE movieid=?",
+                    ResultSet.TYPE_SCROLL_SENSITIVE,
                     ResultSet.CONCUR_UPDATABLE);
             pst.setInt(1, banner.getMovieid());
             ResultSet result = pst.executeQuery();
@@ -83,6 +85,7 @@ public class BannerUtils {
             if (result.first()) {
                 filepath = result.getString("bannerlocation");
                 banner.setBannerlocation(filepath);
+
             }
             conn.close();
 
@@ -90,5 +93,28 @@ public class BannerUtils {
             System.out.println(ex.getMessage());
         }
         return filepath;
+    }
+
+    public static boolean SelectRandom(Vector<Banner> banners) {
+        boolean status = false;
+        try {
+            conn = ConnectToDB.getCon();
+            pst = conn.prepareStatement("SELECT movieid FROM moviebanner ORDER BY RAND() LIMIT 5",
+                    ResultSet.TYPE_SCROLL_SENSITIVE,
+                    ResultSet.CONCUR_UPDATABLE);
+            ResultSet result = pst.executeQuery();
+            int index = 0;
+            while (result.next()) {
+                int movieId = result.getInt("movieid");
+                Banner newBanner = banners.get(index++);
+                newBanner.setMovieid(movieId);
+                status = true;
+            }
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+
+
+        return status;
     }
 }

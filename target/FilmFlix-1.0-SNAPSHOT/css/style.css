@@ -1,9 +1,4 @@
-/*-----------------------------------------------------------------------------------
-	FilmFlix
-	Author: Yasas Lowe
-	Version: 1.0
-	Built with Blocs
------------------------------------------------------------------------------------*/
+
 body{
 	margin:0;
 	padding:0;
@@ -12,19 +7,16 @@ body{
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-.page-container{overflow: hidden;} /* Prevents unwanted scroll space when scroll FX used. */
-a,button{transition: background .3s ease-in-out;outline: none!important;} /* Prevent ugly blue glow on chrome and safari */
+.page-container{overflow: hidden;} 
+a,button{transition: background .3s ease-in-out;outline: none!important;} 
 a:hover{text-decoration: none; cursor:pointer;}
 
-
-/* Preloader */
 
 .page-preloader{position: fixed;top: 0;bottom: 0;width: 100%;z-index:100000;background:#FFFFFF url("../img/pageload-spinner.gif") no-repeat center center;animation-name: preloader-fade;animation-delay: 2s;animation-duration: 0.5s;animation-fill-mode: both;}
 .preloader-complete{animation-delay:0.1s;}
 @keyframes preloader-fade {0% {opacity: 1;visibility: visible;}100% {opacity: 0;visibility: hidden;}}
 
-/* = Blocs
--------------------------------------------------------------- */
+
 
 .bloc{
 	width:100%;
@@ -56,8 +48,7 @@ a:hover{text-decoration: none; cursor:pointer;}
 	padding:20px;
 }
 
-/* = Full Width Blocs 
--------------------------------------------------------------- */
+
 
 .full-width-bloc{
 	padding-left:0;
@@ -172,7 +163,6 @@ a:hover{text-decoration: none; cursor:pointer;}
 }
 
 
-/* Light theme */
 
 .d-bloc .card,.l-bloc{
 	color:rgba(0,0,0,.5);
@@ -200,12 +190,11 @@ a:hover{text-decoration: none; cursor:pointer;}
 	border-color:rgba(0,0,0,.3);
 }
 
-/* Row Margin Offsets */
 
 .voffset{
 	margin-top:30px;
 }
-/* Dividers */
+
 
 .b-divider{
 	border-top:1px solid rgba(0,0,0,.1);

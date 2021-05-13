@@ -1,5 +1,6 @@
 package servlets.User;
 
+import WebFunctions.User.UserLoginPassToBullets;
 import model.User;
 import utils.UserUtils;
 
@@ -12,8 +13,7 @@ import java.io.IOException;
 public class LoginUserServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-//TODO
+        //TODO
     }
 
     @Override
@@ -26,7 +26,12 @@ public class LoginUserServlet extends HttpServlet {
         user.setPassword(password);
 
         boolean status = UserUtils.SelectUser(user);
+
         if (status) {
+            HttpSession session = request.getSession();
+            session.setAttribute("name", user.getName());
+            session.setAttribute("email", user.getEmail());
+            session.setAttribute("password",  UserLoginPassToBullets.passwordTxtToBullets(user.getPassword()));
             System.out.println("Success");
             RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/movies.jsp");
             dispatcher.forward(request, response);

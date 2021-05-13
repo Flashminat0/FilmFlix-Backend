@@ -63,7 +63,7 @@
                                     <a href="jsp/movie-banner-uploader.jsp" class="a-btn nav-link">movie-banner-uploader</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="jsp/browse.jsp" class="nav-link a-btn">Browse</a>
+                                    <a href="jsp/browse1.jsp" class="nav-link a-btn">Browse</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="jsp/login.jsp" class="nav-link a-btn">Login</a>

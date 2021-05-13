@@ -1,4 +1,12 @@
+<%@ page import="WebFunctions.User.UserLoginPassToBullets" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%
+    if (session != null) {
+        session.setAttribute("name", "");
+        session.setAttribute("email", "");
+        session.setAttribute("password", "");
+    }
+%>
 <!doctype html>
 <html lang="en">
 <head>
