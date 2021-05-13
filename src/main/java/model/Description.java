@@ -27,5 +27,6 @@ public class Description {
 
     public String getMovieDescription() {
         return movieDescription;
+
     }
 }
