@@ -5,6 +5,7 @@ import model.Banner;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.Vector;
 
 public class BannerUtils {
     private static Connection conn;
@@ -94,16 +95,19 @@ public class BannerUtils {
         return filepath;
     }
 
-    public static boolean SelectRandom(Banner banner) {
+    public static boolean SelectRandom(Vector<Banner> banners) {
         boolean status = false;
         try {
             conn = ConnectToDB.getCon();
-            pst = conn.prepareStatement("SELECT movieid FROM moviebanner ORDER BY RAND() LIMIT 1",
+            pst = conn.prepareStatement("SELECT movieid FROM moviebanner ORDER BY RAND() LIMIT 5",
                     ResultSet.TYPE_SCROLL_SENSITIVE,
                     ResultSet.CONCUR_UPDATABLE);
             ResultSet result = pst.executeQuery();
-            if (result.first()) {
-                banner.setMovieid(Integer.parseInt(result.getString("movieid")));
+            int index = 0;
+            while (result.next()) {
+                int movieId = result.getInt("movieid");
+                Banner newBanner = banners.get(index++);
+                newBanner.setMovieid(movieId);
                 status = true;
             }
         } catch (Exception ex) {

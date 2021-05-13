@@ -76,7 +76,8 @@ public class MovieUtils {
         String movieName = null;
         try {
             conn = ConnectToDB.getCon();
-            pst = conn.prepareStatement("SELECT  moviename FROM  moviename WHERE movieid=?", ResultSet.TYPE_SCROLL_SENSITIVE,
+            pst = conn.prepareStatement("SELECT  moviename FROM  moviename WHERE movieid=?",
+                    ResultSet.TYPE_SCROLL_SENSITIVE,
                     ResultSet.CONCUR_UPDATABLE);
             pst.setInt(1, movie.getMovieid());
             ResultSet result = pst.executeQuery();
