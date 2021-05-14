@@ -14,6 +14,9 @@ public class AddDescriptionServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        int MovieID = Integer.parseInt("movieID");
+        String movieName = request.getParameter("movieName");
+        String movieDescription = request.getParameter("movieDescription");
 
     }
 }

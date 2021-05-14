@@ -127,7 +127,7 @@
                                     <input id="desc_movie_id" class="form-control animated fadeInRight animDelay06"
                                            required type="number"
                                            data-validation-required-message="Please fill this before submit"
-                                           name="name5" data-appear-anim-style="fadeInRight"/>
+                                           name="movieID" data-appear-anim-style="fadeInRight"/>
                                 </div>
                                 <div class="form-group">
                                     <label>
@@ -135,7 +135,7 @@
                                     </label>
                                     <input id="desc_movie_name" class="form-control animated fadeInRight animDelay06"
                                            required data-validation-required-message="Please fill this before submit"
-                                           name="email5" data-appear-anim-style="fadeInRight"/>
+                                           name="movieName" data-appear-anim-style="fadeInRight"/>
                                 </div>
                                 <div class="form-group">
                                     <label>
@@ -144,7 +144,7 @@
                                                       class="form-control animated fadeInRight animDelay06" rows="4"
                                                       cols="50" required
                                                       data-validation-required-message="Please fill this before submit"
-                                                      maxlength="150" name="message"
+                                                      maxlength="150" name="movieDescription"
                                                       data-appear-anim-style="fadeInRight"></textarea>
                                 </div>
                                 <button class="bloc-button btn btn-d btn-lg btn-block animated vanishIn animDelay1"
