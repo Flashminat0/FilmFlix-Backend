@@ -1,9 +1,28 @@
 package model;
 
 public class Film {
-    private int movieID;
-    private String fileName;
-    private String filePath;
+    protected int movieID;
+    protected String fileName;
+    protected String fileSize;
+    protected String filePath;
+
+    public Film(int movieID, String fileName, String fileSize, String filePath) {
+        this.movieID = movieID;
+        this.fileName = fileName;
+        this.fileSize = fileSize;
+        this.filePath = filePath;
+    }
+
+    public Film(String fileName, String fileSize, String filePath) {
+        this.fileName = fileName;
+        this.fileSize = fileSize;
+        this.filePath = filePath;
+    }
+
+    public Film() {
+
+    }
+
 
     public int getMovieID() {
         return movieID;
@@ -11,6 +30,10 @@ public class Film {
 
     public String getFileName() {
         return fileName;
+    }
+
+    public String getFileSize() {
+        return fileSize;
     }
 
     public String getFilePath() {
@@ -25,8 +48,11 @@ public class Film {
         this.fileName = fileName;
     }
 
+    public void setFileSize(String fileSize) {
+        this.fileSize = fileSize;
+    }
+
     public void setFilePath(String filePath) {
         this.filePath = filePath;
     }
-
 }

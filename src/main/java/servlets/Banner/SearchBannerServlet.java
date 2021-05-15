@@ -14,6 +14,7 @@ import java.io.IOException;
 public class SearchBannerServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         int search_id_movie_banner = Integer.parseInt(request.getParameter("search_movie_id_banner"));
 
         Banner banner = new Banner();
