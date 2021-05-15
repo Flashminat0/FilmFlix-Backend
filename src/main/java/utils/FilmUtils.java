@@ -61,6 +61,7 @@ public class FilmUtils {
             pst = conn.prepareStatement("SELECT fileName, fileSize, filePath FROM film WHERE movieID = ?",
                     ResultSet.TYPE_SCROLL_SENSITIVE,
                     ResultSet.CONCUR_UPDATABLE);
+            pst.setInt(1, film.getMovieID());
             ResultSet result = pst.executeQuery();
 
             while(result.first()) {
@@ -70,6 +71,7 @@ public class FilmUtils {
                 film.setFileSize(fileSize);
                 String filePath = result.getString("filePath");
                 film.setFilePath(filePath);
+                break;
             }
         }catch (Exception ex){
             System.out.println(ex.getMessage());

@@ -24,7 +24,7 @@ public class SearchFilmServlet extends HttpServlet {
         request.setAttribute("file_Size", film.getFileSize());
         request.setAttribute("file_Path", film.getFilePath());
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/movie_edit_delete.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/movie_uploader.jsp");
         dispatcher.forward(request, response);
 
     }
