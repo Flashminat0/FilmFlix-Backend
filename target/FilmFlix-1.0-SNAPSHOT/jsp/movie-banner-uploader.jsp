@@ -1,29 +1,20 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page import="java.sql.*" %>
 <%
-    String bannerPath = "../img/banner/";
-    if (request.getAttribute("bannerlocation") == null) {
-        request.setAttribute("showthisbanner", "../img/placeholder.png");
-    } else {
-        request.setAttribute("showthisbanner", bannerPath + request.getAttribute("bannerlocation"));
+
+    if (request.getParameter("submit-search-btn")!=null)
+    {
+        String searchTermID = request.getParameter("search_movie_id_banner");
     }
 
-    if (request.getAttribute("movieid") == null) {
-        request.setAttribute("movieid", "");
-    }
-    if (request.getAttribute("moviename") == null) {
-        request.setAttribute("moviename", "");
-    }
-    if (request.getAttribute("bannerlocation") == null) {
-        request.setAttribute("bannerlocation", "");
-    }
-    if (session.getAttribute("email") == null) {
-        request.setAttribute("loginPageStatus", "Log in");
-        request.setAttribute("BrowseAccess", "");
-    }
-    if (session.getAttribute("email") != null) {
-        request.setAttribute("loginPageStatus", "Log out");
-        request.setAttribute("BrowseAccess", "Browse");
-    }
+    Connection con ;
+    PreparedStatement pst;
+    ResultSet rs;
+
+//    Class.forName(com.)
+//    con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/filmflix" , "flashminat0" , "");
+//    pst =
+
 %>
 <!doctype html>
 <html lang="en">
@@ -93,14 +84,10 @@
                                     <a href="movie-banner-uploader.jsp" class="a-btn nav-link">movie-banner-uploader</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="browse.jsp"
-                                       class="nav-link a-btn"><%= request.getAttribute("BrowseAccess")%>
-                                    </a>
+                                    <a href="browse.jsp" class="nav-link a-btn">Browse</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="login.jsp"
-                                       class="nav-link a-btn"><%= request.getAttribute("loginPageStatus")%>
-                                    </a>
+                                    <a href="login.jsp" class="nav-link a-btn">Login</a>
                                 </li>
                             </ul>
                         </div>
@@ -133,9 +120,8 @@
                             <form id="banner-search-form" data-form-type="blocs-form" action="bannerSearch"
                                   method="GET">
                                 <div class="form-group">
-                                    <input id="search_movie_id_banner" name="search_movie_id_banner"
-                                           class="form-control animated bounceInRight"
-                                           required placeholder="🔍 Search movie ID"
+                                    <input id="search_movie_id_banner" name="search_movie_id_banner" class="form-control animated bounceInRight"
+                                           required  placeholder="🔍 Search movie ID"
                                            data-appear-anim-style="bounceInRight"/>
                                     <div>
                                         <div class="row search-box-btn animated vanishIn animDelay04"
@@ -179,7 +165,7 @@
                 <div class="col">
                     <div class="row">
                         <div class="col-lg-5 animated puffIn" data-appear-anim-style="puffIn">
-                            <img src="../img/lazyload-ph.png" data-src="<%= request.getAttribute("showthisbanner")%>"
+                            <img src="../img/lazyload-ph.png" data-src="<%= request.getAttribute("bannerlocation")  %>"
                                  class="img-fluid mx-auto d-block img-bloc-18-style animated bounceInUp lazyload"
                                  alt="placeholder image" data-appear-anim-style="bounceInUp"/><a
                                 href="movie-banner-uploader.jsp"
@@ -193,42 +179,34 @@
                                     <label>
                                         Movie ID
                                     </label>
-                                    <input id="movieid" name="movieid"
-                                           class="form-control animated bounceInRight animDelay04" required
-                                           data-appear-anim-style="bounceInRight"
-                                           placeholder=<%= request.getAttribute("movieid") %>>
+                                    <input id="movieid" name="movieid" class="form-control animated bounceInRight animDelay04" required
+                                           data-appear-anim-style="bounceInRight" placeholder=<%= request.getAttribute("movieid") %>/>
                                 </div>
                                 <div class="form-group">
                                     <label>
                                         Movie Name
                                     </label>
-                                    <input id="moviename" name="moviename"
-                                           class="form-control animated bounceInRight animDelay08" required
-                                           data-appear-anim-style="bounceInRight"
-                                           placeholder=<%= request.getAttribute("moviename") %>>
+                                    <input id="moviename" name="moviename" class="form-control animated bounceInRight animDelay08" required
+                                            data-appear-anim-style="bounceInRight" placeholder=<%= request.getAttribute("moviename") %>/>
                                 </div>
                                 <div class="form-group">
                                     <label>
-                                        Movie Banner File Name
+                                        Movie Banner File Location
                                     </label>
-                                    <input id="bannerlocation" name="bannerlocation"
-                                           class="form-control animated bounceInRight animDelay1" required
-                                           data-appear-anim-style="bounceInRight"
-                                           placeholder=<%= request.getAttribute("bannerlocation") %>>
+                                    <input id="bannerlocation" name="bannerlocation" class="form-control animated bounceInRight animDelay1" required
+                                            data-appear-anim-style="bounceInRight" placeholder=<%= request.getAttribute("bannerlocation") %>/>
                                     <div class="object-hidden" id="edit-or-delete">
                                         <div class="row buttons-below-banner-submit animated bounceInUp animDelay1"
                                              data-appear-anim-style="bounceInUp">
                                             <div class="col">
                                                 <button class="bloc-button btn btn-d btn-lg btn-36-style btn-block animated vanishIn animDelay1"
-                                                        type="submit" id="edit-btn" name="edit-btn"
-                                                        data-appear-anim-style="vanishIn">
+                                                        type="submit" id="edit-btn" name="edit-btn" data-appear-anim-style="vanishIn">
                                                     Edit
                                                 </button>
                                             </div>
                                             <div class="col">
                                                 <button class="bloc-button btn btn-d btn-lg btn-36-style btn-block animated vanishIn animDelay1"
-                                                        type="submit" id="delete-btn" name="delete-btn"
-                                                        data-appear-anim-style="vanishIn">
+                                                        type="submit" id="delete-btn" name="delete-btn" data-appear-anim-style="vanishIn">
                                                     Delete
                                                 </button>
                                             </div>
@@ -238,8 +216,7 @@
                                         <div class="row buttons-below-banner-submit">
                                             <div class="col animated bounceInUp" data-appear-anim-style="bounceInUp">
                                                 <button class="bloc-button btn btn-d btn-lg btn-36-style btn-block animated vanishIn animDelay1"
-                                                        type="submit" id="create-btn" name="create-btn"
-                                                        data-appear-anim-style="vanishIn">
+                                                        type="submit" id="create-btn" name="create-btn" data-appear-anim-style="vanishIn">
                                                     Create
                                                 </button>
                                             </div>
