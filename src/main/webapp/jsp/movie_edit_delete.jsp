@@ -6,7 +6,7 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <link rel="canonical" href="www.filmflix.com/edit-delete-movie.jsp" />
+    <link rel="canonical" href="www.filmflix.com/movie_uploader.jsp" />
     <meta name="robots" content="index, follow" />
     <link rel="shortcut icon" type="image/png" href="../img/favicon.jpg">
 
@@ -91,27 +91,27 @@
                                 <button class="btn btn-d btn-lg bloc-button float-lg-right btn-file-upload-style animated vanishIn animDelay06" type="submit" id="mov-upload-file-upload-btn" data-appear-anim-style="vanishIn">
                                     File Upload
                                 </button>
-                                <form id="mov-upload-form" data-form-type="blocs-form" action="AddFilm" method="POST">
+                                <form id="mov-upload-form" data-form-type="blocs-form" action="SearchFilm" method="GET">
                                     <div class="form-group upload-form-begining-txt">
                                         <label>
                                             Movie File Name
                                         </label>
-                                        <input id="mov_upload_file_name_txt" class="form-control" required name="file_Name" />
+                                        <input id="mov_upload_file_name_txt" class="form-control" required name="file_Name" value="<%= request.getAttribute("fileName") %>" />
                                         <div class="form-group upload-from-second-label">
                                             <label>
-                                                Movie ID
+                                                Movie File Size
                                             </label>
-                                            <input class="form-control" id="mov_upload_film_id_txt" required name="movie_ID" />
+                                            <input class="form-control" id="mov_upload_film_id_txt" required name="file_Size" value="<%= request.getAttribute("fileSize") %>"/>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label>
                                             Movie File Path<br>
                                         </label>
-                                        <input id="mov_upload_film_path_txt" class="form-control" required name="file_Path" />
+                                        <input id="mov_upload_film_path_txt" class="form-control" required name="file_Path" value="<%= request.getAttribute("filePath") %>"/>
                                     </div>
                                     <button class="bloc-button btn btn-d btn-lg btn-block upload-submit-btn animated vanishIn animDelay08" type="submit" id="mov-upload-submit-btn" data-appear-anim-style="vanishIn">
-                                        Submit
+                                        Edit
                                     </button>
                                 </form>
                             </div>
@@ -120,16 +120,16 @@
                 </div>
                 <div class="col-sm-4 col-lg-4">
                     <img src="../img/lazyload-ph.png" data-src="../img/banner/black-mirror-banner.jpg" class="img-fluid mx-auto d-block upload-img zoomIn animDelay02 animated pulse-hvr lazyload" alt="placeholder image" id="mov-upload-img" data-appear-anim-style="zoomIn" />
-                    <div class="form-group animated fadeInRight animDelay04" data-appear-anim-style="fadeInRight">
-                        <input class="form-control" placeholder="🔍  Search movie by ID" required id="mov-upload-film-search-txt" />
-                    </div>
+<%--                    <div class="form-group animated fadeInRight animDelay04" data-appear-anim-style="fadeInRight">--%>
+<%--                        <input class="form-control" placeholder="🔍  Search movie by ID" required id="mov-upload-film-search-txt" />--%>
+<%--                    </div>--%>
                     <div class="animated puffIn animDelay04" data-appear-anim-style="puffIn">
                         <div class="row">
-                            <div class="col">
-                                <button class="btn btn-d btn-lg btn-23-style bloc-button" id="mov-upload-search-btn" type="submit">
-                                    Search
-                                </button>
-                            </div>
+<%--                            <div class="col">--%>
+<%--                                <button onclick="document.location='movie-list.jsp'" class="btn btn-d btn-lg btn-23-style bloc-button" id="mov-upload-search-btn" type="submit">--%>
+<%--                                    Movie List--%>
+<%--                                </button>--%>
+<%--                            </div>--%>
                             <div class="col">
                                 <button class="btn btn-d btn-lg btn-24-style bloc-button" id="mov-upload-delete-id" type="submit">
                                     Delete
@@ -220,3 +220,4 @@
 
 </body>
 </html>
+
