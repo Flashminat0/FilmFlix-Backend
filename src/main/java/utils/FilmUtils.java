@@ -63,7 +63,7 @@ public class FilmUtils {
                     ResultSet.CONCUR_UPDATABLE);
             ResultSet result = pst.executeQuery();
 
-            while(result.next()) {
+            while(result.first()) {
                 String fileName = result.getString("fileName");
                 film.setFileName(fileName);
                 String fileSize = result.getString("fileSize");
