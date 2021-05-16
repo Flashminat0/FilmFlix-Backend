@@ -6,7 +6,7 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <link rel="canonical" href="www.filmflix.com/description_adder.jsp"/>
+    <link rel="canonical" href="www.filmflix.com/description_edit.jsp"/>
     <meta name="robots" content="index, follow"/>
     <link rel="shortcut icon" type="image/png" href="../img/favicon.jpg">
 
@@ -106,19 +106,12 @@
                             </div>
                         </div>
                     </div>
-                    <button class="btn btn-d btn-lg btn-26-style bloc-button animated vanishIn animDelay04"
-                            type="submit" id="desc-edit-btn" data-appear-anim-style="vanishIn">
-                        <span class="icon-spacer ion ion-android-create"></span><a href="description_edit.jsp">Edit</a>
-                    </button>
-                    <button class="btn btn-d btn-lg btn-edit-style float-lg-right bloc-button animated vanishIn animDelay04"
-                            type="submit" id="desc-del-btn" data-appear-anim-style="vanishIn">
-                        <span class="icon-spacer ion ion-close-circled"></span>Delete
-                    </button>
+
                 </div>
                 <div class="col-sm-8 col animated bounceInUp" data-appear-anim-style="bounceInUp">
                     <div class="row">
                         <div class="col-12">
-                            <form id="desc-adder" data-form-type="blocs-form" action="description_adder" method="POST">
+                            <form id="desc-adder" data-form-type="blocs-form" action="description_edit" method="POST">
                                 <div class="form-group">
                                     <label>
                                         Movie ID
@@ -148,7 +141,7 @@
                                 </div>
                                 <button class="bloc-button btn btn-d btn-lg btn-block animated vanishIn animDelay1"
                                         type="submit" data-appear-anim-style="vanishIn">
-                                    Submit
+                                    Edit
                                 </button>
                             </form>
                         </div>

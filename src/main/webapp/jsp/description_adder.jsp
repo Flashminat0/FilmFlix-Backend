@@ -100,8 +100,7 @@
                                 </div>
                             </div>
                             <div class="col">
-                                <button class="bloc-button btn btn-d btn-lg float-lg-right pulse-hvr animated vanishIn animDelay02"
-                                        type="submit" id="desc-mov-id-search-btn" data-appear-anim-style="vanishIn">
+                                <button class="bloc-button btn btn-d btn-lg float-lg-right pulse-hvr animated vanishIn animDelay02" type="submit" id="desc-mov-id-search-btn" data-appear-anim-style="vanishIn">
                                     🔍
                                 </button>
                             </div>
@@ -109,7 +108,7 @@
                     </div>
                     <button class="btn btn-d btn-lg btn-26-style bloc-button animated vanishIn animDelay04"
                             type="submit" id="desc-edit-btn" data-appear-anim-style="vanishIn">
-                        <span class="icon-spacer ion ion-android-create"></span>Edit
+                        <span class="icon-spacer ion ion-android-create"></span><a href="description_edit.jsp">Edit</a>
                     </button>
                     <button class="btn btn-d btn-lg btn-edit-style float-lg-right bloc-button animated vanishIn animDelay04"
                             type="submit" id="desc-del-btn" data-appear-anim-style="vanishIn">
