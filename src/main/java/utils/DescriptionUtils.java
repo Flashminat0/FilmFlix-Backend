@@ -1,22 +1,23 @@
 package utils;
 
 import model.Description;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
 
-public class DescriptionUtils {
 
-    private static Connection conn;
-    private static PreparedStatement pst;
+public  class DescriptionUtils {
 
-    public boolean AddDescription(Description description){
+    private static Connection conn ;
+    private static PreparedStatement pst ;
+
+
+    public static boolean AddDescription(Description description){
 
         boolean status = false;
         try{
             conn = ConnectToDB.getCon();
-            pst = conn.prepareStatement("INSERT INTO moviedescription (movieid , moviename, moviedescription) VALUES (?,?,?)");
+            pst = conn.prepareStatement("insert into moviedescription (movieid, moviename, description) VALUES (?,?,?)");
             pst.setInt(1,description.getMovieID());
             pst.setString(2,description.getMovieName());
             pst.setString(3,description.getMovieDescription());

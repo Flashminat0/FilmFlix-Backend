@@ -147,12 +147,12 @@
     <!--Description-->
     <!--Add Description-->
     <servlet>
-        <servlet-name>description-add</servlet-name>
+        <servlet-name>AddDescriptionServlet</servlet-name>
         <servlet-class>servlets.Description.AddDescriptionServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>description-add</servlet-name>
-        <url-pattern></url-pattern>
+        <servlet-name>AddDescriptionServlet</servlet-name>
+        <url-pattern>/jsp/description_adder</url-pattern>
     </servlet-mapping>
     <!--End of Add Description-->
 

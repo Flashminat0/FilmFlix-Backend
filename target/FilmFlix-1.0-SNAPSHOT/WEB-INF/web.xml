@@ -144,4 +144,18 @@
 
     <!--End of Film-->
 
+    <!--Description-->
+    <!--Add Description-->
+    <servlet>
+        <servlet-name>AddDescriptionServlet</servlet-name>
+        <servlet-class>servlets.Description.AddDescriptionServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddDescriptionServlet</servlet-name>
+        <url-pattern>/jsp/description_adder</url-pattern>
+    </servlet-mapping>
+    <!--End of Add Description-->
+
+    <!--End of Description-->
+
 </web-app>
