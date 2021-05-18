@@ -42,7 +42,7 @@ public  class DescriptionUtils {
         boolean status = false;
         try {
             conn = ConnectToDB.getCon();
-            pst = conn.prepareStatement("UPDATE moviebanner SET movieid = ? , moviename = ? , description = ? WHERE movieid = ?");
+            pst = conn.prepareStatement("UPDATE moviedescription SET movieid = ? , moviename = ? , description = ? WHERE movieid = ?");
             pst.setInt(1,description.getMovieID());
             pst.setString(2, description.getMovieName());
             pst.setString(3,description.getMovieDescription());

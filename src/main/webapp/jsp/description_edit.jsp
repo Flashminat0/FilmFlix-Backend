@@ -111,7 +111,7 @@
                 <div class="col-sm-8 col animated bounceInUp" data-appear-anim-style="bounceInUp">
                     <div class="row">
                         <div class="col-12">
-                            <form id="desc-adder" data-form-type="blocs-form" action="description_edit" method="POST">
+                            <form id="desc-edit" data-form-type="blocs-form" action="description_edit" method="POST">
                                 <div class="form-group">
                                     <label>
                                         Movie ID
