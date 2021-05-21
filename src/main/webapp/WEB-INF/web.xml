@@ -64,7 +64,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>RandomizeBrowse</servlet-name>
-        <url-pattern>/jsp/browse1.jsp</url-pattern>
+        <url-pattern>/jsp/browse-randomized</url-pattern>
     </servlet-mapping>
     <!--END of Randomize browse page with banners-->
 

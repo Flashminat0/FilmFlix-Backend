@@ -93,7 +93,7 @@
                                     <a href="movie-banner-uploader.jsp" class="a-btn nav-link">movie-banner-uploader</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="browse.jsp"
+                                    <a href="browse-randomized"
                                        class="nav-link a-btn"><%= request.getAttribute("BrowseAccess")%>
                                     </a>
                                 </li>
