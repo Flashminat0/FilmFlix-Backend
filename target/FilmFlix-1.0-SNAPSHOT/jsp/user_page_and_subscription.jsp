@@ -1,7 +1,10 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%
     if (session == null){
-        System.out.println("ado no");
+        request.setAttribute("userpage", "");
+    }
+    if (session != null) {
+        request.setAttribute("userpage", "User Page");
     }
 %>
 <!doctype html>
@@ -66,7 +69,7 @@
                                     <a href="description_adder.jsp" class="nav-link">description_adder</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="user_page_and_subscription.jsp" class="nav-link a-btn">user page</a>
+                                    <a href="user_page_and_subscription.jsp" class="nav-link a-btn"><%= request.getAttribute("userpage")%></a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="movie-banner-uploader.jsp" class="a-btn nav-link">movie-banner-uploader</a>
