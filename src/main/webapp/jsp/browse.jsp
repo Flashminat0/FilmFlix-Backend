@@ -1,5 +1,13 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%
+    if (session.getAttribute("email") == null) {
+        request.setAttribute("loginPageStatus", "Log in");
+        request.setAttribute("BrowseAccess", "");
+    }
+    if (session.getAttribute("email") != null) {
+        request.setAttribute("loginPageStatus", "Log out");
+        request.setAttribute("BrowseAccess", "Browse");
+    }
 
 %>
 <!doctype html>
@@ -73,7 +81,7 @@
                                     <a href="browse-randomized" class="nav-link a-btn">Browse</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="login.jsp" class="nav-link a-btn">Login</a>
+                                    <a href="login.jsp" class="nav-link a-btn"><%= request.getAttribute("loginPageStatus")%></a>
                                 </li>
                             </ul>
                         </div>
@@ -199,7 +207,8 @@
                                          data-tilt-glare="true" data-tilt-maxglare=".5" used-anim-style="vanishIn"
                                          data-appear-anim-style="vanishIn" used-anim-delay="animDelay02">
                                         <img class="hover-tilt-img-item img-fluid lazyload" src="../img/lazyload-ph.png"
-                                             data-src="<%= request.getAttribute("BannerImage5") %>" alt="placeholder image">
+                                             data-src="<%= request.getAttribute("BannerImage5") %>"
+                                             alt="placeholder image">
                                         <h3 class="hover-tilt-label" style="font-family: Lato; font-weight: 900;">Film
                                             name</h3>
                                     </div>

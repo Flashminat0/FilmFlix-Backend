@@ -1,4 +1,9 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%
+    if (session == null){
+        System.out.println("ado no");
+    }
+%>
 <!doctype html>
 <html lang="en">
 <head>
@@ -67,7 +72,7 @@
                                     <a href="movie-banner-uploader.jsp" class="a-btn nav-link">movie-banner-uploader</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="browse.jsp" class="nav-link a-btn">Browse</a>
+                                    <a href="browse-randomized" class="nav-link a-btn">Browse</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="login.jsp" class="nav-link a-btn">Login</a>

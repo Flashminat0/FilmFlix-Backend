@@ -2,9 +2,9 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%
     if (session != null) {
-        session.setAttribute("name", "");
-        session.setAttribute("email", "");
-        session.setAttribute("password", "");
+        session.setAttribute("name", null);
+        session.setAttribute("email", null);
+        session.setAttribute("password", null);
     }
 %>
 <!doctype html>

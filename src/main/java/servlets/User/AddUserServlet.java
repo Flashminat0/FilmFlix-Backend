@@ -1,5 +1,6 @@
 package servlets.User;
 
+import WebFunctions.User.UserLoginPassToBullets;
 import model.User;
 import utils.UserUtils;
 
@@ -28,6 +29,10 @@ public class AddUserServlet extends HttpServlet {
 
         boolean status = UserUtils.AddUser(user);
         if (status) {
+            HttpSession session = request.getSession();
+            session.setAttribute("name", user.getName());
+            session.setAttribute("email", user.getEmail());
+            session.setAttribute("password",  UserLoginPassToBullets.passwordTxtToBullets(user.getPassword()));
             System.out.println("Success");
             RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/movies.jsp");
             dispatcher.forward(request, response);
