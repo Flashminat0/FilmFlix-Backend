@@ -28,7 +28,7 @@ public class EditDescriptionServlet extends HttpServlet {
         boolean status = DescriptionUtils.EditDescription(description);
         if (status == true) {
             System.out.println("Success");
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/about.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/description_adder.jsp");
             dispatcher.forward(request, response);
         } else {
             System.out.println("Check again.");

@@ -166,7 +166,21 @@
         <servlet-name>EditDescriptionServlet</servlet-name>
         <url-pattern>/jsp/description_edit</url-pattern>
     </servlet-mapping>
-    <!--End of Add Description-->
+    <!--End of Edit Description-->
+
+
+    <!--Edit Description-->
+    <servlet>
+        <servlet-name>DeleteDescriptionServlet</servlet-name>
+        <servlet-class>servlets.Description.DeleteDescriptionServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteDescriptionServlet</servlet-name>
+        <url-pattern>/jsp/description_addder</url-pattern>
+    </servlet-mapping>
+    <!--End of Edit Description-->
+
+
 
 
     <!--End of Description-->

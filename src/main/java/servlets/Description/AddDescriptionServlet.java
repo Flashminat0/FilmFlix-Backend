@@ -32,7 +32,7 @@ public class AddDescriptionServlet extends HttpServlet {
 
         if(addDescriptionStatus == true) {
             System.out.println("Success");
-            RequestDispatcher ds = request.getRequestDispatcher("/jsp/browse.jsp");
+            RequestDispatcher ds = request.getRequestDispatcher("/jsp/description_adder.jsp");
             ds.forward(request,response);
         }
         else {
