@@ -169,19 +169,28 @@
     <!--End of Edit Description-->
 
 
-    <!--Edit Description-->
+    <!--Delete Description-->
     <servlet>
         <servlet-name>DeleteDescriptionServlet</servlet-name>
         <servlet-class>servlets.Description.DeleteDescriptionServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>DeleteDescriptionServlet</servlet-name>
-        <url-pattern>/jsp/description_addder</url-pattern>
+        <url-pattern>/jsp/description_delete</url-pattern>
     </servlet-mapping>
-    <!--End of Edit Description-->
+    <!--End of Delete Description-->
 
 
-
+    <!--Delete Description-->
+    <servlet>
+        <servlet-name>SearchDescriptionServlet</servlet-name>
+        <servlet-class>servlets.Description.SearchDescriptionServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SearchDescriptionServlet</servlet-name>
+        <url-pattern>/jsp/descriptionSearch</url-pattern>
+    </servlet-mapping>
+    <!--End of Search Description-->
 
     <!--End of Description-->
 

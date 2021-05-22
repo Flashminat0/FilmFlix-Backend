@@ -39,10 +39,12 @@ public class DeleteDescriptionServlet extends HttpServlet {
             boolean statusAddMovieDescription = DescriptionUtils.DeleteDescription(description);
             if (statusAddMovieID && statusAddMovieName && statusAddMovieDescription) {
                 System.out.println("Success");
-                RequestDispatcher dispatcher1 = request.getRequestDispatcher("/jsp/description_edit.jsp");
+                RequestDispatcher dispatcher1 = request.getRequestDispatcher("/jsp/description_adder.jsp");
                 dispatcher1.forward(request, response);
             } else {
-                System.out.println("waradi");
+                System.out.println("Error");
+                RequestDispatcher dispatcher2 = request.getRequestDispatcher("/jsp/SearchDescription.jsp");
+                dispatcher2.forward(request, response);
             }
 
 

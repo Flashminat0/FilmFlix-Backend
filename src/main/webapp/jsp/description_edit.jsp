@@ -110,8 +110,8 @@
                 </div>
                 <div class="col-sm-8 col animated bounceInUp" data-appear-anim-style="bounceInUp">
                     <div class="row">
-                        <div class="col-12">
-                            <br id="desc-edit" data-form-type="blocs-form" action="description_edit" method="POST">
+                        <br class="col-12">
+                            <form id="desc-edit" data-form-type="blocs-form" action="description_edit" method="POST">
                                 <div class="form-group">
                                     <label>
                                         Movie ID
@@ -139,7 +139,6 @@
                                                       maxlength="150" name="movieDescription"
                                                       data-appear-anim-style="fadeInRight"></textarea>
                                 </div>
-
                                 <button class="bloc-button btn btn-d btn-lg btn-block animated vanishIn animDelay1"
                                         type="submit"  data-appear-anim-style="vanishIn">
                                     Edit

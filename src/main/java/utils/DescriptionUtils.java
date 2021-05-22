@@ -2,6 +2,8 @@ package utils;
 
 
 import model.Description;
+import model.Movie;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -78,5 +80,51 @@ public  class DescriptionUtils {
             System.out.println(ex.getMessage());
         }
         return status;
+    }
+
+    public static String SelectMovieName(Description description) {
+        String movieName = null;
+
+        try {
+            conn = ConnectToDB.getCon();
+            pst = conn.prepareStatement("select moviename from moviedescription where movieid = ?",
+                    ResultSet.TYPE_SCROLL_SENSITIVE,
+                    ResultSet.CONCUR_UPDATABLE);
+            pst.setInt(1, description.getMovieID());
+            ResultSet result = pst.executeQuery();
+
+            if (result.first()) {
+                movieName = result.getString("moviename");
+                description.setMovieName(movieName);
+
+            }
+            conn.close();
+
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+        return movieName;
+    }
+
+    public static String SelectMovieDescription(Description description) {
+        String movieDescription = null;
+        try {
+            conn = ConnectToDB.getCon();
+            pst = conn.prepareStatement("select description from moviedescription where movieid = ?",
+                    ResultSet.TYPE_SCROLL_SENSITIVE,
+                    ResultSet.CONCUR_UPDATABLE);
+            pst.setInt(1, description.getMovieID());
+            ResultSet result = pst.executeQuery();
+
+            if (result.first()) {
+                movieDescription = result.getString("description");
+                description.setMovieDescription(movieDescription);
+            }
+            conn.close();
+
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+        return movieDescription;
     }
 }
