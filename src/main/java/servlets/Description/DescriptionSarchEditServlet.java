@@ -1,22 +1,21 @@
 package servlets.Description;
 
-
 import model.Description;
 import utils.DescriptionUtils;
+
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
-
-@WebServlet(name = "SearchDescriptionServlet", value = "/SearchDescriptionServlet")
-public class SearchDescriptionServlet extends HttpServlet {
+@WebServlet(name = "DescriptionSarchEditServlet", value = "/DescriptionSarchEditServlet")
+public class DescriptionSarchEditServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        int search_id_description = Integer.parseInt(request.getParameter("search_id_description"));
+        int search_id_description_delete = Integer.parseInt(request.getParameter("search_id_description_delete"));
 
         Description description = new Description();
-        description.setMovieID(search_id_description);
+        description.setMovieID(search_id_description_delete);
 
 
         String statusSelectMovieName = DescriptionUtils.SelectMovieName(description);
@@ -29,7 +28,7 @@ public class SearchDescriptionServlet extends HttpServlet {
             request.setAttribute("movieName", description.getMovieName());
             request.setAttribute("movieDescription", description.getMovieDescription());
 
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/SearchDescription.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/description_edit.jsp");
             dispatcher.forward(request, response);
 
 
@@ -39,11 +38,8 @@ public class SearchDescriptionServlet extends HttpServlet {
 
     }
 
-
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-
 
     }
 }

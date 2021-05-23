@@ -81,7 +81,7 @@
     </div>
     <!-- navbar END -->
 
-    <!-- description-add -->
+    <!-- description-search -->
     <div class="bloc l-bloc animated fadeIn animSpeedLazy bloc-bg-texture texture-fabric" id="description-add"
          data-appear-anim-style="fadeIn">
         <div class="container bloc-lg bloc-sm-lg">
@@ -111,15 +111,33 @@
                                                         Search
                                                     </button>
                                                 </div>
-
                                             </div>
                                         </div>
                                     </div>
                                 </form>
+                                <div>
+                                    <div class="row search-box-btn animated vanishIn animDelay04"
+                                         data-appear-anim-style="vanishIn">
+                                        <div class="col">
+                                            </br>
+                                            <button class="btn btn-d btn-lg btn-37-style btn-block bloc-button animDelay02 animated bounceInUp"
+                                                    id="cancel-btn1" name="cancel-btn1" type="submit"
+                                                    data-appear-anim-style="bounceInUp">
+                                                <a href="description_adder.jsp">
+                                                    Cancel
+                                                </a>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <!-- description-search-END -->
+
+
+                <!-- description-delete-END -->
                 <div class="col-sm-8 col animated bounceInUp" data-appear-anim-style="bounceInUp">
                     <div class="row">
                         <div class="col-12">
@@ -165,7 +183,7 @@
             </div>
         </div>
     </div>
-    <!-- description-add END -->
+    <!-- description-delete-END -->
 
     <!-- ScrollToTop Button -->
     <a class="bloc-button btn btn-d scrollToTop" onclick="scrollToTarget('1',this)">

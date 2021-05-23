@@ -92,25 +92,53 @@
                          id="desc-mov-img" data-appear-anim-style="bounceInLeft"/>
                     <div class="desc-search-bar">
                         <div class="row">
-                            <div class="col-lg-9">
-                                <div class="form-group">
-                                    <input class="form-control animated bounceInLeft animDelay04"
-                                           placeholder="Enter Movie ID" id="desc-search-txt"
-                                           data-appear-anim-style="bounceInLeft"/>
-                                </div>
-                            </div>
+
                             <div class="col">
-                                <button class="bloc-button btn btn-d btn-lg float-lg-right pulse-hvr animated vanishIn animDelay02" type="submit" id="desc-mov-id-search-btn" data-appear-anim-style="vanishIn">
-                                    🔍
-                                </button>
+                                <form id="searchEdit_id_description" data-form-type="blocs-form" action="descriptionSearchEdit"
+                                      method="GET">
+                                    <div class="form-group">
+                                        <input id="search_id_description_delete" name="search_id_description_delete"
+                                               class="form-control animated bounceInRight"
+                                               required placeholder="🔍 Search movie ID"
+                                               data-appear-anim-style="bounceInRight"/>
+                                        <div>
+                                            <div class="row search-box-btn animated vanishIn animDelay04"
+                                                 data-appear-anim-style="vanishIn">
+                                                <div class="col">
+                                                    <button class="btn btn-d btn-lg btn-37-style btn-block bloc-button animDelay02 animated bounceInUp"
+                                                            id="submit-search-btn" name="submit-search-btn" type="submit"
+                                                            data-appear-anim-style="bounceInUp">
+                                                        Search
+                                                    </button>
+                                                    </br>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                                <div>
+                                    <div class="row search-box-btn animated vanishIn animDelay04"
+                                         data-appear-anim-style="vanishIn">
+                                        <div class="col">
+                                            </br>
+                                            <button class="btn btn-d btn-lg btn-37-style btn-block bloc-button animDelay02 animated bounceInUp"
+                                                    id="cancel-btn1" name="cancel-btn1" type="submit"
+                                                    data-appear-anim-style="bounceInUp">
+                                                <a href="description_adder.jsp">
+                                                    Cancel
+                                                </a>
+                                            </button>
+                                        </div>
+
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
                 <div class="col-sm-8 col animated bounceInUp" data-appear-anim-style="bounceInUp">
                     <div class="row">
-                        <br class="col-12">
+                        <div class="col-12">
                             <form id="desc-edit" data-form-type="blocs-form" action="description_edit" method="POST">
                                 <div class="form-group">
                                     <label>
@@ -119,7 +147,8 @@
                                     <input id="desc_movie_id" class="form-control animated fadeInRight animDelay06"
                                            required type="number"
                                            data-validation-required-message="Please fill this before submit"
-                                           name="movieID" data-appear-anim-style="fadeInRight"/>
+                                           name="movieID" data-appear-anim-style="fadeInRight"
+                                           placeholder=<%= request.getAttribute("movieID") %>>
                                 </div>
                                 <div class="form-group">
                                     <label>
@@ -127,7 +156,8 @@
                                     </label>
                                     <input id="desc_movie_name" class="form-control animated fadeInRight animDelay06"
                                            required data-validation-required-message="Please fill this before submit"
-                                           name="movieName" data-appear-anim-style="fadeInRight"/>
+                                           name="movieName" data-appear-anim-style="fadeInRight"
+                                           placeholder=<%= request.getAttribute("movieName") %>>
                                 </div>
                                 <div class="form-group">
                                     <label>
@@ -137,7 +167,8 @@
                                                       cols="50" required
                                                       data-validation-required-message="Please fill this before submit"
                                                       maxlength="150" name="movieDescription"
-                                                      data-appear-anim-style="fadeInRight"></textarea>
+                                                      data-appear-anim-style="fadeInRight"
+                                                      placeholder=<%= request.getAttribute("movieDescription") %>></textarea>
                                 </div>
                                 <button class="bloc-button btn btn-d btn-lg btn-block animated vanishIn animDelay1"
                                         type="submit"  data-appear-anim-style="vanishIn">

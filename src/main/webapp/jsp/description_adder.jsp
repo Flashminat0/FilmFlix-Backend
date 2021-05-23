@@ -95,7 +95,7 @@
                             <div class="col-lg-9">
                                 <div class="form-group">
                                     <label>
-                                        Search your details.
+                                        Search film description details.
                                     </label>>
                                 </div>
                             </div>
@@ -114,7 +114,7 @@
                     </button>
                     <button class="btn btn-d btn-lg btn-edit-style float-lg-right bloc-button animated vanishIn animDelay04"
                             type="submit" id="desc-del-btn" name="desc-del-btn" data-appear-anim-style="vanishIn">
-                        <span class="icon-spacer ion ion-close-circled"></span><a href="description_delete.jsp">Delete</a>
+                        <span class="icon-spacer ion ion-close-circled"></span><a href="SearchDescription.jsp">Delete</a>
                     </button>
                 </div>
                 <div class="col-sm-8 col animated bounceInUp" data-appear-anim-style="bounceInUp">

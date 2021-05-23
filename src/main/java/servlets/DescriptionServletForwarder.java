@@ -20,7 +20,7 @@ public class DescriptionServletForwarder extends HttpServlet {
 
 
         } else if (request.getParameter("delete-desc") != null) {
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/DeleteDescription");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/SearchDescription");
             dispatcher.forward(request, response);
 
         }

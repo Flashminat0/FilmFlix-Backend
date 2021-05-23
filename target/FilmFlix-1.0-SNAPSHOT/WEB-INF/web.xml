@@ -181,7 +181,7 @@
     <!--End of Delete Description-->
 
 
-    <!--Delete Description-->
+    <!--Read Description-->
     <servlet>
         <servlet-name>SearchDescriptionServlet</servlet-name>
         <servlet-class>servlets.Description.SearchDescriptionServlet</servlet-class>
@@ -190,7 +190,19 @@
         <servlet-name>SearchDescriptionServlet</servlet-name>
         <url-pattern>/jsp/descriptionSearch</url-pattern>
     </servlet-mapping>
-    <!--End of Search Description-->
+    <!--End of Read Description-->
+
+
+    <!--Read Description-->
+    <servlet>
+        <servlet-name>DescriptionSarchEditServlet</servlet-name>
+        <servlet-class>servlets.Description.DescriptionSarchEditServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DescriptionSarchEditServlet</servlet-name>
+        <url-pattern>/jsp/descriptionSearchEdit</url-pattern>
+    </servlet-mapping>
+    <!--End of Read Description-->
 
     <!--End of Description-->
 
