@@ -6,6 +6,23 @@
         session.setAttribute("email", null);
         session.setAttribute("password", null);
     }
+
+    if (session.getAttribute("email") == null) {
+        request.setAttribute("admin-movie-upload", "");
+        request.setAttribute("admin-description", "");
+        request.setAttribute("admin-banner", "");
+        request.setAttribute("userAccess", "");
+        request.setAttribute("loginPageStatus", "Log in");
+        request.setAttribute("BrowseAccess", "");
+    }
+    if (session.getAttribute("email") != null) {
+        request.setAttribute("admin-movie-upload", "Movie Upload");
+        request.setAttribute("admin-description", "Description Adder");
+        request.setAttribute("admin-banner", "Banner Upload");
+        request.setAttribute("userAccess", "User Page");
+        request.setAttribute("loginPageStatus", "Log out");
+        request.setAttribute("BrowseAccess", "Browse");
+    }
 %>
 <!doctype html>
 <html lang="en">
@@ -52,7 +69,7 @@
             <div class="row">
                 <div class="col">
                     <nav class="navbar navbar-light row navbar-expand-md" role="navigation">
-                        <a class="navbar-brand animated zoomIn animSpeedLazy animDelay02 link-style" href="index.html"
+                        <a class="navbar-brand animated zoomIn animSpeedLazy animDelay02 link-style" href="../index.jsp"
                            data-appear-anim-style="zoomIn"><img src="../img/Header_logo.jpg" alt="logo" class="mr-2"/>FilmFlix</a>
                         <button id="nav-toggle" type="button"
                                 class="ui-navbar-toggler navbar-toggler border-0 p-0 ml-auto mr-md-0 nav-togggle menu-icon-thick-bars"
@@ -63,22 +80,34 @@
                         <div class="collapse navbar-collapse navbar-43698 special-dropdown-nav">
                             <ul class="site-navigation nav navbar-nav ml-auto">
                                 <li class="nav-item">
-                                    <a href="movie_uploader.jsp" class="nav-link">movie_uploader</a>
+                                    <a href="movie_uploader.jsp"
+                                       class="nav-link"><%= request.getAttribute("admin-movie-upload")%>
+                                    </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="description_adder.jsp" class="nav-link">description_adder</a>
+                                    <a href="description_adder.jsp"
+                                       class="nav-link"><%= request.getAttribute("admin-description")%>
+                                    </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="user_page_and_subscription.jsp" class="nav-link a-btn">user page</a>
+                                    <a href="movie-banner-uploader.jsp"
+                                       class="a-btn nav-link"><%= request.getAttribute("admin-banner")%>
+                                    </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="movie-banner-uploader.jsp" class="a-btn nav-link">movie-banner-uploader</a>
+                                    <a href="browse-randomized"
+                                       class="nav-link a-btn"><%= request.getAttribute("BrowseAccess")%>
+                                    </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="browse-randomized" class="nav-link a-btn">Browse</a>
+                                    <a href="user_page_and_subscription.jsp"
+                                       class="nav-link a-btn"><%= request.getAttribute("userAccess")%>
+                                    </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="login.jsp" class="nav-link a-btn">Login</a>
+                                    <a href="login.jsp"
+                                       class="nav-link a-btn"><%= request.getAttribute("loginPageStatus")%>
+                                    </a>
                                 </li>
                             </ul>
                         </div>

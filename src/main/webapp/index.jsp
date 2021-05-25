@@ -9,6 +9,10 @@
         request.setAttribute("BrowseAccess", "");
     }
     if (session.getAttribute("email") != null) {
+        request.setAttribute("admin-movie-upload", "Movie Upload");
+        request.setAttribute("admin-description", "Description Adder");
+        request.setAttribute("admin-banner", "Banner Upload");
+        request.setAttribute("userAccess", "User Page");
         request.setAttribute("loginPageStatus", "Log out");
         request.setAttribute("BrowseAccess", "Browse");
     }
@@ -86,15 +90,16 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="jsp/user_page_and_subscription.jsp"
-                                       class="nav-link a-btn"><%= request.getAttribute("userAccess")%>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
                                     <a href="jsp/browse-randomized"
                                        class="nav-link a-btn"><%=request.getAttribute("BrowseAccess")%>
                                     </a>
                                 </li>
+                                <li class="nav-item">
+                                    <a href="jsp/user_page_and_subscription.jsp"
+                                       class="nav-link a-btn"><%= request.getAttribute("userAccess")%>
+                                    </a>
+                                </li>
+
                                 <li class="nav-item">
                                     <a href="jsp/login.jsp"
                                        class="nav-link a-btn"><%= request.getAttribute("loginPageStatus")%>
