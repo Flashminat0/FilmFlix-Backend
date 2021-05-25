@@ -52,7 +52,7 @@
             <div class="row">
                 <div class="col">
                     <nav class="navbar navbar-light row navbar-expand-md" role="navigation">
-                        <a class="navbar-brand animated zoomIn animSpeedLazy animDelay02 link-style" href="index.html"
+                        <a class="navbar-brand animated zoomIn animSpeedLazy animDelay02 link-style" href="../index.jsp"
                            data-appear-anim-style="zoomIn"><img src="../img/Header_logo.jpg" alt="logo" class="mr-2"/>FilmFlix</a>
                         <button id="nav-toggle" type="button"
                                 class="ui-navbar-toggler navbar-toggler border-0 p-0 ml-auto mr-md-0 nav-togggle menu-icon-thick-bars"
