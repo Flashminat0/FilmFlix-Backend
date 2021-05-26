@@ -1,27 +1,4 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%
-    if (session.getAttribute("email") == null) {
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/login.jsp");
-        dispatcher.forward(request, response);
-    }
-
-    if (session.getAttribute("email") == null) {
-        request.setAttribute("admin-movie-upload", "");
-        request.setAttribute("admin-description", "");
-        request.setAttribute("admin-banner", "");
-        request.setAttribute("userAccess", "");
-        request.setAttribute("loginPageStatus", "Log in");
-        request.setAttribute("BrowseAccess", "");
-    }
-    if (session.getAttribute("email") != null) {
-        request.setAttribute("admin-movie-upload", "Movie Upload");
-        request.setAttribute("admin-description", "Description Adder");
-        request.setAttribute("admin-banner", "Banner Upload");
-        request.setAttribute("userAccess", "User Page");
-        request.setAttribute("loginPageStatus", "Log out");
-        request.setAttribute("BrowseAccess", "Browse");
-    }
-%>
 <!doctype html>
 <html lang="en">
 <head>
@@ -29,7 +6,7 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <link rel="canonical" href="www.filmflix.com/description_adder.jsp"/>
+    <link rel="canonical" href="www.filmflix.com/description_edit.jsp"/>
     <meta name="robots" content="index, follow"/>
     <link rel="shortcut icon" type="image/png" href="../img/favicon.jpg">
 
@@ -78,34 +55,22 @@
                         <div class="collapse navbar-collapse navbar-43698 special-dropdown-nav">
                             <ul class="site-navigation nav navbar-nav ml-auto">
                                 <li class="nav-item">
-                                    <a href="movie_uploader.jsp"
-                                       class="nav-link"><%= request.getAttribute("admin-movie-upload")%>
-                                    </a>
+                                    <a href="movie_uploader.jsp" class="nav-link">movie_uploader</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="description_adder.jsp"
-                                       class="nav-link"><%= request.getAttribute("admin-description")%>
-                                    </a>
+                                    <a href="description_adder.jsp" class="nav-link">description_adder</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="movie-banner-uploader.jsp"
-                                       class="a-btn nav-link"><%= request.getAttribute("admin-banner")%>
-                                    </a>
+                                    <a href="user_page_and_subscription.jsp" class="nav-link a-btn">user page</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="browse-randomized"
-                                       class="nav-link a-btn"><%= request.getAttribute("BrowseAccess")%>
-                                    </a>
+                                    <a href="movie-banner-uploader.jsp" class="a-btn nav-link">movie-banner-uploader</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="user_page_and_subscription.jsp"
-                                       class="nav-link a-btn"><%= request.getAttribute("userAccess")%>
-                                    </a>
+                                    <a href="browse.jsp" class="nav-link a-btn">Browse</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="login.jsp"
-                                       class="nav-link a-btn"><%= request.getAttribute("loginPageStatus")%>
-                                    </a>
+                                    <a href="login.jsp" class="nav-link a-btn">Login</a>
                                 </li>
                             </ul>
                         </div>
@@ -127,35 +92,54 @@
                          id="desc-mov-img" data-appear-anim-style="bounceInLeft"/>
                     <div class="desc-search-bar">
                         <div class="row">
-                            <div class="col-lg-9">
-                                <div class="form-group">
-                                    <label>
-                                        Search your details.
-                                    </label>>
-                                </div>
-                            </div>
+
                             <div class="col">
-                                <button class="bloc-button btn btn-d btn-lg float-lg-right pulse-hvr animated vanishIn animDelay02" type="submit" id="desc-mov-id-search-btn" name="desc-mov-id-search-btn" data-appear-anim-style="vanishIn">
-                                    <a href="SearchDescription.jsp">
-                                    🔍
-                                    </a>
-                                </button>
+                                <form id="searchEdit_id_description" data-form-type="blocs-form" action="descriptionSearchEdit"
+                                      method="GET">
+                                    <div class="form-group">
+                                        <input id="search_id_description_delete" name="search_id_description_delete"
+                                               class="form-control animated bounceInRight"
+                                               required placeholder="🔍 Search movie ID"
+                                               data-appear-anim-style="bounceInRight"/>
+                                        <div>
+                                            <div class="row search-box-btn animated vanishIn animDelay04"
+                                                 data-appear-anim-style="vanishIn">
+                                                <div class="col">
+                                                    <button class="btn btn-d btn-lg btn-37-style btn-block bloc-button animDelay02 animated bounceInUp"
+                                                            id="submit-search-btn" name="submit-search-btn" type="submit"
+                                                            data-appear-anim-style="bounceInUp">
+                                                        Search
+                                                    </button>
+                                                    </br>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                                <div>
+                                    <div class="row search-box-btn animated vanishIn animDelay04"
+                                         data-appear-anim-style="vanishIn">
+                                        <div class="col">
+                                            </br>
+                                            <button class="btn btn-d btn-lg btn-37-style btn-block bloc-button animDelay02 animated bounceInUp"
+                                                    id="cancel-btn1" name="cancel-btn1" type="submit"
+                                                    data-appear-anim-style="bounceInUp">
+                                                <a href="description_adder.jsp">
+                                                    Cancel
+                                                </a>
+                                            </button>
+                                        </div>
+
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <button class="btn btn-d btn-lg btn-26-style bloc-button animated vanishIn animDelay04"
-                            type="submit" id="desc-edit-btn" name="desc-edit-btn" data-appear-anim-style="vanishIn">
-                        <span class="icon-spacer ion ion-android-create"></span><a href="description_edit.jsp">Edit</a>
-                    </button>
-                    <button class="btn btn-d btn-lg btn-edit-style float-lg-right bloc-button animated vanishIn animDelay04"
-                            type="submit" id="desc-del-btn" name="desc-del-btn" data-appear-anim-style="vanishIn">
-                        <span class="icon-spacer ion ion-close-circled"></span><a href="SearchDescription.jsp">Delete</a>
-                    </button>
                 </div>
                 <div class="col-sm-8 col animated bounceInUp" data-appear-anim-style="bounceInUp">
                     <div class="row">
                         <div class="col-12">
-                            <form id="desc-adder" data-form-type="blocs-form" action="description_adder" method="POST">
+                            <form id="desc-edit" data-form-type="blocs-form" action="description_edit" method="POST">
                                 <div class="form-group">
                                     <label>
                                         Movie ID
@@ -163,7 +147,8 @@
                                     <input id="desc_movie_id" class="form-control animated fadeInRight animDelay06"
                                            required type="number"
                                            data-validation-required-message="Please fill this before submit"
-                                           name="movieID" data-appear-anim-style="fadeInRight"/>
+                                           name="movieID" data-appear-anim-style="fadeInRight"
+                                           placeholder=<%= request.getAttribute("movieID") %>>
                                 </div>
                                 <div class="form-group">
                                     <label>
@@ -171,7 +156,8 @@
                                     </label>
                                     <input id="desc_movie_name" class="form-control animated fadeInRight animDelay06"
                                            required data-validation-required-message="Please fill this before submit"
-                                           name="movieName" data-appear-anim-style="fadeInRight"/>
+                                           name="movieName" data-appear-anim-style="fadeInRight"
+                                           placeholder=<%= request.getAttribute("movieName") %>>
                                 </div>
                                 <div class="form-group">
                                     <label>
@@ -181,11 +167,12 @@
                                                       cols="50" required
                                                       data-validation-required-message="Please fill this before submit"
                                                       maxlength="150" name="movieDescription"
-                                                      data-appear-anim-style="fadeInRight"></textarea>
+                                                      data-appear-anim-style="fadeInRight"
+                                                      placeholder=<%= request.getAttribute("movieDescription") %>></textarea>
                                 </div>
                                 <button class="bloc-button btn btn-d btn-lg btn-block animated vanishIn animDelay1"
-                                        type="submit" data-appear-anim-style="vanishIn">
-                                    Submit
+                                        type="submit"  data-appear-anim-style="vanishIn">
+                                    Edit
                                 </button>
                             </form>
                         </div>

@@ -129,32 +129,33 @@
                         <div class="row">
                             <div class="col-lg-9">
                                 <div class="form-group">
-                                    <input class="form-control animated bounceInLeft animDelay04"
-                                           placeholder="Enter Movie ID" id="desc-search-txt"
-                                           data-appear-anim-style="bounceInLeft"/>
+                                    <label>
+                                        Search film description details.
+                                    </label>>
                                 </div>
                             </div>
                             <div class="col">
-                                <button class="bloc-button btn btn-d btn-lg float-lg-right pulse-hvr animated vanishIn animDelay02"
-                                        type="submit" id="desc-mov-id-search-btn" data-appear-anim-style="vanishIn">
+                                <button class="bloc-button btn btn-d btn-lg float-lg-right pulse-hvr animated vanishIn animDelay02" type="submit" id="desc-mov-id-search-btn" name="desc-mov-id-search-btn" data-appear-anim-style="vanishIn">
+                                    <a href="SearchDescription.jsp">
                                     🔍
+                                    </a>
                                 </button>
                             </div>
                         </div>
                     </div>
                     <button class="btn btn-d btn-lg btn-26-style bloc-button animated vanishIn animDelay04"
-                            type="submit" id="desc-edit-btn" data-appear-anim-style="vanishIn">
-                        <span class="icon-spacer ion ion-android-create"></span>Edit
+                            type="submit" id="desc-edit-btn" name="desc-edit-btn" data-appear-anim-style="vanishIn">
+                        <span class="icon-spacer ion ion-android-create"></span><a href="description_edit.jsp">Edit</a>
                     </button>
                     <button class="btn btn-d btn-lg btn-edit-style float-lg-right bloc-button animated vanishIn animDelay04"
-                            type="submit" id="desc-del-btn" data-appear-anim-style="vanishIn">
-                        <span class="icon-spacer ion ion-close-circled"></span>Delete
+                            type="submit" id="desc-del-btn" name="desc-del-btn" data-appear-anim-style="vanishIn">
+                        <span class="icon-spacer ion ion-close-circled"></span><a href="SearchDescription.jsp">Delete</a>
                     </button>
                 </div>
                 <div class="col-sm-8 col animated bounceInUp" data-appear-anim-style="bounceInUp">
                     <div class="row">
                         <div class="col-12">
-                            <form id="desc-adder" data-form-type="blocs-form" action="description-add" method="POST">
+                            <form id="desc-adder" data-form-type="blocs-form" action="description_adder" method="POST">
                                 <div class="form-group">
                                     <label>
                                         Movie ID
@@ -162,7 +163,7 @@
                                     <input id="desc_movie_id" class="form-control animated fadeInRight animDelay06"
                                            required type="number"
                                            data-validation-required-message="Please fill this before submit"
-                                           name="name5" data-appear-anim-style="fadeInRight"/>
+                                           name="movieID" data-appear-anim-style="fadeInRight"/>
                                 </div>
                                 <div class="form-group">
                                     <label>
@@ -170,7 +171,7 @@
                                     </label>
                                     <input id="desc_movie_name" class="form-control animated fadeInRight animDelay06"
                                            required data-validation-required-message="Please fill this before submit"
-                                           name="email5" data-appear-anim-style="fadeInRight"/>
+                                           name="movieName" data-appear-anim-style="fadeInRight"/>
                                 </div>
                                 <div class="form-group">
                                     <label>
@@ -179,7 +180,7 @@
                                                       class="form-control animated fadeInRight animDelay06" rows="4"
                                                       cols="50" required
                                                       data-validation-required-message="Please fill this before submit"
-                                                      maxlength="150" name="message"
+                                                      maxlength="150" name="movieDescription"
                                                       data-appear-anim-style="fadeInRight"></textarea>
                                 </div>
                                 <button class="bloc-button btn btn-d btn-lg btn-block animated vanishIn animDelay1"

@@ -195,4 +195,66 @@
     <!--    </servlet-mapping>-->
     <!--    &lt;!&ndash;End of Film&ndash;&gt;-->
 
+    <!--Description-->
+    <!--Add Description-->
+    <servlet>
+        <servlet-name>AddDescriptionServlet</servlet-name>
+        <servlet-class>servlets.Description.AddDescriptionServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddDescriptionServlet</servlet-name>
+        <url-pattern>/jsp/description_adder</url-pattern>
+    </servlet-mapping>
+    <!--End of Add Description-->
+
+
+    <!--Edit Description-->
+    <servlet>
+        <servlet-name>EditDescriptionServlet</servlet-name>
+        <servlet-class>servlets.Description.EditDescriptionServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EditDescriptionServlet</servlet-name>
+        <url-pattern>/jsp/description_edit</url-pattern>
+    </servlet-mapping>
+    <!--End of Edit Description-->
+
+
+    <!--Delete Description-->
+    <servlet>
+        <servlet-name>DeleteDescriptionServlet</servlet-name>
+        <servlet-class>servlets.Description.DeleteDescriptionServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteDescriptionServlet</servlet-name>
+        <url-pattern>/jsp/description_delete</url-pattern>
+    </servlet-mapping>
+    <!--End of Delete Description-->
+
+
+    <!--Read Description-->
+    <servlet>
+        <servlet-name>SearchDescriptionServlet</servlet-name>
+        <servlet-class>servlets.Description.SearchDescriptionServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SearchDescriptionServlet</servlet-name>
+        <url-pattern>/jsp/descriptionSearch</url-pattern>
+    </servlet-mapping>
+    <!--End of Read Description-->
+
+
+    <!--Read Description-->
+    <servlet>
+        <servlet-name>DescriptionSarchEditServlet</servlet-name>
+        <servlet-class>servlets.Description.DescriptionSarchEditServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DescriptionSarchEditServlet</servlet-name>
+        <url-pattern>/jsp/descriptionSearchEdit</url-pattern>
+    </servlet-mapping>
+    <!--End of Read Description-->
+
+    <!--End of Description-->
+
 </web-app>
