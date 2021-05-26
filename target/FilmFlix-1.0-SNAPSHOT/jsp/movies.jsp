@@ -3,9 +3,11 @@
     if (session.getAttribute("email") == null) {
         RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/login.jsp");
         dispatcher.forward(request, response);
+    } else if (request.getAttribute("bufferThis") == null){
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/browse-randomized");
+        dispatcher.forward(request, response);
     }
-
-
+    
     if (session.getAttribute("email") == null) {
         request.setAttribute("admin-movie-upload", "");
         request.setAttribute("admin-description", "");
