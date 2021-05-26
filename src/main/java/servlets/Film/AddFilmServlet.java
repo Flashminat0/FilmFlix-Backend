@@ -23,7 +23,10 @@ public class AddFilmServlet extends HttpServlet {
         String fileSize = request.getParameter("file_Size");
         String filePath = request.getParameter("file_Path");
 
-        Film film = new Film(fileName, fileSize, filePath);
+        Film film = new Film();
+        film.setFileName(fileName);
+        film.setFileSize(fileSize);
+        film.setFilePath(filePath);
 
         FilmUtils.addFilm(film);
         RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/browse.jsp");

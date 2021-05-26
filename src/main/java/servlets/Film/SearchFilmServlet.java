@@ -13,6 +13,11 @@ public class SearchFilmServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         int searchMovieID = Integer.parseInt(request.getParameter("search_Movie_ID"));
 
         Film film = new Film();
@@ -26,11 +31,6 @@ public class SearchFilmServlet extends HttpServlet {
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/movie_uploader.jsp");
         dispatcher.forward(request, response);
-
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
 }

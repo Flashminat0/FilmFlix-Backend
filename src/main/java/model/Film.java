@@ -6,24 +6,19 @@ public class Film {
     protected String fileSize;
     protected String filePath;
 
-    public Film(int movieID, String fileName, String fileSize, String filePath) {
-        this.movieID = movieID;
-        this.fileName = fileName;
-        this.fileSize = fileSize;
-        this.filePath = filePath;
-    }
-
-    public Film(String fileName, String fileSize, String filePath) {
-        this.fileName = fileName;
-        this.fileSize = fileSize;
-        this.filePath = filePath;
-    }
-
-    public Film() {
-
-    }
-
-
+//    public Film(int movieID, String fileName, String fileSize, String filePath) {
+//        this.movieID = movieID;
+//        this.fileName = fileName;
+//        this.fileSize = fileSize;
+//        this.filePath = filePath;
+//    }
+//
+//    public Film(String fileName, String fileSize, String filePath) {
+//        this.fileName = fileName;
+//        this.fileSize = fileSize;
+//        this.filePath = filePath;
+//    }
+//
     public int getMovieID() {
         return movieID;
     }
