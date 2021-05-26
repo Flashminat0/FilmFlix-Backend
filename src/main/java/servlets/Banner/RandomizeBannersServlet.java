@@ -1,6 +1,7 @@
 package servlets.Banner;
 
 import model.Banner;
+import model.Movie;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -24,6 +25,11 @@ public class RandomizeBannersServlet extends HttpServlet {
                 if (newBanner.getMovieid() > 0) {
                     utils.BannerUtils.SelectBanner(newBanner);
                     request.setAttribute("BannerImage" + (i + 1), "../img/banner/" + newBanner.getBannerlocation());
+                }
+                if (i == 4) {
+                    Movie featured = new Movie();
+                    featured.setMovieid(newBanner.getMovieid());
+                    request.setAttribute("FeaturedFilm", utils.MovieUtils.SelectMovie(featured));
                 }
             }
             RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/browse.jsp");

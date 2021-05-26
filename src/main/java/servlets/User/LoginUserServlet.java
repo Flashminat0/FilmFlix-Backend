@@ -33,7 +33,7 @@ public class LoginUserServlet extends HttpServlet {
             session.setAttribute("email", user.getEmail());
             session.setAttribute("password",  UserLoginPassToBullets.passwordTxtToBullets(user.getPassword()));
             System.out.println("Success");
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/movies.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/user_page_and_subscription.jsp");
             dispatcher.forward(request, response);
         } else {
             System.out.println("waradi");

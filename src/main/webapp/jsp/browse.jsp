@@ -213,7 +213,7 @@
                         <div class="row">
                             <div class="col animated bounceInUp" data-appear-anim-style="bounceInUp">
                                 <h3 class="mg-md">
-                                    FILM NAME 1
+                                    <%= request.getAttribute("FeaturedFilm").toString().toUpperCase() %>
                                 </h3>
                                 <p>
                                     this film is fire pls nigga trust me watch this shit
@@ -228,8 +228,7 @@
                                         <img class="hover-tilt-img-item img-fluid lazyload" src="../img/lazyload-ph.png"
                                              data-src="<%= request.getAttribute("BannerImage5") %>"
                                              alt="placeholder image">
-                                        <h3 class="hover-tilt-label" style="font-family: Lato; font-weight: 900;">Film
-                                            name</h3>
+                                        <h3 class="hover-tilt-label" style="font-family: Lato ; text-shadow : 0 0 3px #000000; font-weight: 900;"><%= request.getAttribute("FeaturedFilm") %></h3>
                                     </div>
                                 </div>
                             </div>

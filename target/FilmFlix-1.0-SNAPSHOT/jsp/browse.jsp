@@ -1,16 +1,21 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%
     if (session.getAttribute("email") == null) {
+        request.setAttribute("admin-movie-upload", "");
+        request.setAttribute("admin-description", "");
+        request.setAttribute("admin-banner", "");
+        request.setAttribute("userAccess", "");
         request.setAttribute("loginPageStatus", "Log in");
         request.setAttribute("BrowseAccess", "");
-        request.setAttribute("userpage", "");
     }
     if (session.getAttribute("email") != null) {
+        request.setAttribute("admin-movie-upload", "Movie Upload");
+        request.setAttribute("admin-description", "Description Adder");
+        request.setAttribute("admin-banner", "Banner Upload");
+        request.setAttribute("userAccess", "User Page");
         request.setAttribute("loginPageStatus", "Log out");
         request.setAttribute("BrowseAccess", "Browse");
-        request.setAttribute("userpage", "User Page");
     }
-
 %>
 <!doctype html>
 <html lang="en">
@@ -68,22 +73,34 @@
                         <div class="collapse navbar-collapse navbar-43698 special-dropdown-nav">
                             <ul class="site-navigation nav navbar-nav ml-auto">
                                 <li class="nav-item">
-                                    <a href="movie_uploader.jsp" class="nav-link">movie_uploader</a>
+                                    <a href="movie_uploader.jsp"
+                                       class="nav-link"><%= request.getAttribute("admin-movie-upload")%>
+                                    </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="description_adder.jsp" class="nav-link">description_adder</a>
+                                    <a href="description_adder.jsp"
+                                       class="nav-link"><%= request.getAttribute("admin-description")%>
+                                    </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="user_page_and_subscription.jsp" class="nav-link a-btn"><%= request.getAttribute("userpage")%></a>
+                                    <a href="movie-banner-uploader.jsp"
+                                       class="a-btn nav-link"><%= request.getAttribute("admin-banner")%>
+                                    </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="movie-banner-uploader.jsp" class="a-btn nav-link">movie-banner-uploader</a>
+                                    <a href="browse-randomized"
+                                       class="nav-link a-btn"><%= request.getAttribute("BrowseAccess")%>
+                                    </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="browse-randomized" class="nav-link a-btn">Browse</a>
+                                    <a href="user_page_and_subscription.jsp"
+                                       class="nav-link a-btn"><%= request.getAttribute("userAccess")%>
+                                    </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="login.jsp" class="nav-link a-btn"><%= request.getAttribute("loginPageStatus")%></a>
+                                    <a href="login.jsp"
+                                       class="nav-link a-btn"><%= request.getAttribute("loginPageStatus")%>
+                                    </a>
                                 </li>
                             </ul>
                         </div>
@@ -196,7 +213,7 @@
                         <div class="row">
                             <div class="col animated bounceInUp" data-appear-anim-style="bounceInUp">
                                 <h3 class="mg-md">
-                                    FILM NAME 1
+                                    <%= request.getAttribute("FeaturedFilm").toString().toUpperCase() %>
                                 </h3>
                                 <p>
                                     this film is fire pls nigga trust me watch this shit
@@ -211,8 +228,7 @@
                                         <img class="hover-tilt-img-item img-fluid lazyload" src="../img/lazyload-ph.png"
                                              data-src="<%= request.getAttribute("BannerImage5") %>"
                                              alt="placeholder image">
-                                        <h3 class="hover-tilt-label" style="font-family: Lato; font-weight: 900;">Film
-                                            name</h3>
+                                        <h3 class="hover-tilt-label" style="font-family: Lato ; text-shadow : 0 0 3px #000000; font-weight: 900;"><%= request.getAttribute("FeaturedFilm") %></h3>
                                     </div>
                                 </div>
                             </div>
