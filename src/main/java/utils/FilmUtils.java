@@ -23,6 +23,8 @@ public class FilmUtils {
             pst.setString(3, film.getFilePath());
             pst.executeUpdate();
 
+            conn.close();
+
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
@@ -73,6 +75,9 @@ public class FilmUtils {
                 film.setFilePath(filePath);
                 break;
             }
+
+            conn.close();
+
         }catch (Exception ex){
             System.out.println(ex.getMessage());
         }
@@ -82,8 +87,8 @@ public class FilmUtils {
 
 
 
-    public boolean updateFilm(Film film){
-        boolean filmUpdated = false;
+    public static boolean updateFilm(Film film){
+        boolean status = false;
 
         try{
             conn = ConnectToDB.getCon();
@@ -92,28 +97,78 @@ public class FilmUtils {
             pst.setString(2, film.getFileSize());
             pst.setString(3, film.getFilePath());
             pst.setInt(4, film.getMovieID());
-            filmUpdated = pst.executeUpdate() > 0;
 
-        }catch (Exception ex){
+            int result = pst.executeUpdate();
+            if (result > 0) {
+                status = true;
+            }
+            conn.close();
+
+        } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
-        return filmUpdated;
+
+        return status;
     }
 
 
 
-    public boolean deleteFilm(int movieID) {
-        boolean filmDeleted = false;
+    public static boolean deleteFilm(Film film) {
+        boolean status = false;
 
         try{
             conn = ConnectToDB.getCon();
             pst = conn.prepareStatement("DELETE FROM film WHERE movieID = ?");
-            pst.setInt(1, movieID);
-            filmDeleted = pst.executeUpdate() > 0;
+            pst.setInt(1, film.getMovieID());
+            int result = pst.executeUpdate();
+            if (result > 0) {
+                status = true;
+            }
+            conn.close();
 
-        }catch (Exception ex){
+        } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
-        return filmDeleted;
+
+        return status;
     }
 }
+
+//    public boolean updateFilm(Film film){
+//        boolean filmUpdated = false;
+//
+//        try{
+//            conn = ConnectToDB.getCon();
+//            pst = conn.prepareStatement("UPDATE film set  fileName = ?, fileSize = ?, filePath = ? WHERE movieID = ?");
+//            pst.setString(1, film.getFileName());
+//            pst.setString(2, film.getFileSize());
+//            pst.setString(3, film.getFilePath());
+//            pst.setInt(4, film.getMovieID());
+//            filmUpdated = pst.executeUpdate() > 0;
+//
+//            conn.close();
+//
+//        }catch (Exception ex){
+//            System.out.println(ex.getMessage());
+//        }
+//        return filmUpdated;
+//    }
+//
+//
+//
+//    public boolean deleteFilm(int movieID) {
+//        boolean filmDeleted = false;
+//
+//        try{
+//            conn = ConnectToDB.getCon();
+//            pst = conn.prepareStatement("DELETE FROM film WHERE movieID = ?");
+//            pst.setInt(1, movieID);
+//            filmDeleted = pst.executeUpdate() > 0;
+//
+//            conn.close();
+//
+//        }catch (Exception ex){
+//            System.out.println(ex.getMessage());
+//        }
+//        return filmDeleted;
+//    }

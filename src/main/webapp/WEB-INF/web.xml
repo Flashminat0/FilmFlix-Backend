@@ -152,7 +152,7 @@
         <servlet-name>SearchFilm</servlet-name>
         <url-pattern>/jsp/SearchFilm</url-pattern>
     </servlet-mapping>
-    <!--End of Add Film-->
+    <!--End of Search Film-->
 
     <!--Update Film-->
     <servlet>
@@ -165,7 +165,7 @@
     </servlet-mapping>
     <!--End of Update Film-->
 
-    <!--Search Film-->
+    <!--Delete Film-->
     <servlet>
         <servlet-name>DeleteFilm</servlet-name>
         <servlet-class>servlets.Film.DeleteFilmServlet</servlet-class>
@@ -174,16 +174,29 @@
         <servlet-name>DeleteFilm</servlet-name>
         <url-pattern>/jsp/DeleteFilm</url-pattern>
     </servlet-mapping>
-    <!--End of Add Film-->
+    <!--End of Delete Film-->
 
-<!--    <servlet>-->
-<!--        <servlet-name>FilmAction</servlet-name>-->
-<!--        <servlet-class>servlets.FilmServletForwarder</servlet-class>-->
-<!--    </servlet>-->
-<!--    <servlet-mapping>-->
-<!--        <servlet-name>FilmAction</servlet-name>-->
-<!--        <url-pattern>/jsp/FilmAction</url-pattern>-->
-<!--    </servlet-mapping>-->
-<!--    &lt;!&ndash;End of Film&ndash;&gt;-->
+    <!--Film Action Forwarder 1-->
+    <servlet>
+        <servlet-name>FilmAction1</servlet-name>
+        <servlet-class>servlets.FilmServletForwarder1</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>FilmAction1</servlet-name>
+        <url-pattern>/jsp/FilmAction1</url-pattern>
+    </servlet-mapping>
+    <!--End of Film Action Forwarder-->
+
+    <!--Film Action Forwarder 2-->
+    <servlet>
+        <servlet-name>FilmAction2</servlet-name>
+        <servlet-class>servlets.FilmServletForwarder2</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>FilmAction2</servlet-name>
+        <url-pattern>/jsp/FilmAction2</url-pattern>
+    </servlet-mapping>
+    <!--End of Film Action Forwarder-->
+
 
 </web-app>
