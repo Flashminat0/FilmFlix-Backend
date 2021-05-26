@@ -25,6 +25,7 @@ public class RandomizeBannersServlet extends HttpServlet {
                 if (newBanner.getMovieid() > 0) {
                     utils.BannerUtils.SelectBanner(newBanner);
                     request.setAttribute("BannerImage" + (i + 1), "../img/banner/" + newBanner.getBannerlocation());
+                    request.setAttribute("MovieId" + (i + 1) , newBanner.getMovieid());
                 }
                 if (i == 4) {
                     Movie featured = new Movie();

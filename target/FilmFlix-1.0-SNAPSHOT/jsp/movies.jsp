@@ -4,6 +4,9 @@
         RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/login.jsp");
         dispatcher.forward(request, response);
     }
+
+
+
     if (session.getAttribute("email") == null) {
         request.setAttribute("admin-movie-upload", "");
         request.setAttribute("admin-description", "");
