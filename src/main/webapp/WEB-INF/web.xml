@@ -26,6 +26,15 @@
         <url-pattern>/jsp/bannerAction</url-pattern>
     </servlet-mapping>
 
+    <!--Banner to Movie Forwarder-->
+    <servlet>
+        <servlet-name>BannerToMovie</servlet-name>
+        <servlet-class>servlets.BannerToMovieForwarder</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BannerToMovie</servlet-name>
+        <url-pattern>/jsp/BufferMovie</url-pattern>
+    </servlet-mapping>
     <!-- Create Banner and Movie Name-->
     <servlet>
         <servlet-name>CreateBanner</servlet-name>
@@ -176,14 +185,14 @@
     </servlet-mapping>
     <!--End of Add Film-->
 
-<!--    <servlet>-->
-<!--        <servlet-name>FilmAction</servlet-name>-->
-<!--        <servlet-class>servlets.FilmServletForwarder</servlet-class>-->
-<!--    </servlet>-->
-<!--    <servlet-mapping>-->
-<!--        <servlet-name>FilmAction</servlet-name>-->
-<!--        <url-pattern>/jsp/FilmAction</url-pattern>-->
-<!--    </servlet-mapping>-->
-<!--    &lt;!&ndash;End of Film&ndash;&gt;-->
+    <!--    <servlet>-->
+    <!--        <servlet-name>FilmAction</servlet-name>-->
+    <!--        <servlet-class>servlets.FilmServletForwarder</servlet-class>-->
+    <!--    </servlet>-->
+    <!--    <servlet-mapping>-->
+    <!--        <servlet-name>FilmAction</servlet-name>-->
+    <!--        <url-pattern>/jsp/FilmAction</url-pattern>-->
+    <!--    </servlet-mapping>-->
+    <!--    &lt;!&ndash;End of Film&ndash;&gt;-->
 
 </web-app>

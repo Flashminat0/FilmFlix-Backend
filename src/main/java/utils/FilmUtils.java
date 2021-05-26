@@ -29,29 +29,30 @@ public class FilmUtils {
     }
 
 
-//
-//    public List<Film> selectAllFilms() {
-//        List<Film> films = new ArrayList<>();
-//
-//        try {
-//            conn = ConnectToDB.getCon();
-//            pst = conn.prepareStatement("SELECT * FROM film");
-//            ResultSet result = pst.executeQuery();
-//
-//            while (result.next()) {
-//                int movieID = result.getInt("movieID");
-//                String fileName = result.getString("fileName");
-//                String fileSize = result.getString("fileSize");
-//                String filePath = result.getString("filePath");
-//                films.add(new Film(movieID, fileName, fileSize, filePath));
-//            }
-//
-//        } catch (Exception ex) {
-//            System.out.println(ex.getMessage());
-//        }
-//        return films;
-//    }
+/*
 
+    public List<Film> selectAllFilms() {
+        List<Film> films = new ArrayList<>();
+
+        try {
+            conn = ConnectToDB.getCon();
+            pst = conn.prepareStatement("SELECT * FROM film");
+            ResultSet result = pst.executeQuery();
+
+            while (result.next()) {
+                int movieID = result.getInt("movieID");
+                String fileName = result.getString("fileName");
+                String fileSize = result.getString("fileSize");
+                String filePath = result.getString("filePath");
+                films.add(new Film(movieID, fileName, fileSize, filePath));
+            }
+
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+        return films;
+    }
+*/
 
 
     public static Film selectFilm(Film film) {

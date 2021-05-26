@@ -261,28 +261,28 @@
                     <div>
                         <div class="row row-style">
                             <div class="col">
-                                <a href="movies.jsp?movieId=<%= request.getAttribute("MovieId1")%>"><img src="../img/lazyload-ph.png"
+                                <a href="BufferMovie?movieId=<%= request.getAttribute("MovieId1")%>"><img src="../img/lazyload-ph.png"
                                                           data-src="<%= request.getAttribute("BannerImage1") %>"
                                                           class="img-fluid mx-auto d-block animDelay08 animated bounceInLeft lazyload"
                                                           alt="placeholder image" data-appear-anim-style="bounceInLeft"
                                                           id="recommend-1"/></a>
                             </div>
                             <div class="col">
-                                <a href="movies.jsp?movieId=<%= request.getAttribute("MovieId2")%>"><img src="../img/lazyload-ph.png"
+                                <a href="BufferMovie?movieId=<%= request.getAttribute("MovieId2")%>"><img src="../img/lazyload-ph.png"
                                                           data-src="<%= request.getAttribute("BannerImage2") %>"
                                                           class="img-fluid mx-auto d-block animDelay06 animated bounceInLeft lazyload"
                                                           alt="placeholder image" data-appear-anim-style="bounceInLeft"
                                                           id="recommend-2"/></a>
                             </div>
                             <div class="col">
-                                <a href="movies.jsp?movieId=<%= request.getAttribute("MovieId3")%>"><img src="../img/lazyload-ph.png"
+                                <a href="BufferMovie?movieId=<%= request.getAttribute("MovieId3")%>"><img src="../img/lazyload-ph.png"
                                                           data-src="<%= request.getAttribute("BannerImage3") %>"
                                                           class="img-fluid mx-auto d-block animDelay04 animated bounceInLeft lazyload"
                                                           alt="placeholder image" data-appear-anim-style="bounceInLeft"
                                                           id="recommend-3"/></a>
                             </div>
                             <div class="col">
-                                <a href="movies.jsp?movieId=<%= request.getAttribute("MovieId4")%>"><img src="../img/lazyload-ph.png"
+                                <a href="BufferMovie?movieId=<%= request.getAttribute("MovieId4")%>"><img src="../img/lazyload-ph.png"
                                                           data-src="<%= request.getAttribute("BannerImage4") %>"
                                                           class="img-fluid mx-auto d-block animDelay02 animated bounceInLeft lazyload"
                                                           alt="placeholder image" data-appear-anim-style="bounceInLeft"
@@ -294,7 +294,7 @@
                                 <span class="empty-column"></span>
                             </div>
                             <div class="col">
-                                <a href="movies.jsp?movieId=<%= request.getAttribute("MovieId5")%>"><img src="../img/lazyload-ph.png"
+                                <a href="BufferMovie?movieId=<%= request.getAttribute("MovieId5")%>"><img src="../img/lazyload-ph.png"
                                                           data-src="<%= request.getAttribute("BannerImage5") %>"
                                                           class="img-fluid img-last-container img-bloc-11-style none pulse-hvr animated bounceInDown mx-auto d-block lazyload"
                                                           alt="placeholder image" data-appear-anim-style="bounceInDown"
