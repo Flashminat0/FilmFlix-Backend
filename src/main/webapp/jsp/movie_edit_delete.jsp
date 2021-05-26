@@ -1,6 +1,11 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%
     if (session.getAttribute("email") == null) {
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/login.jsp");
+        dispatcher.forward(request, response);
+    }
+
+    if (session.getAttribute("email") == null) {
         request.setAttribute("admin-movie-upload", "");
         request.setAttribute("admin-description", "");
         request.setAttribute("admin-banner", "");

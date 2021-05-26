@@ -228,7 +228,9 @@
                                         <img class="hover-tilt-img-item img-fluid lazyload" src="../img/lazyload-ph.png"
                                              data-src="<%= request.getAttribute("BannerImage5") %>"
                                              alt="placeholder image">
-                                        <h3 class="hover-tilt-label" style="font-family: Lato ; text-shadow : 0 0 3px #000000; font-weight: 900;"><%= request.getAttribute("FeaturedFilm") %></h3>
+                                        <h3 class="hover-tilt-label"
+                                            style="font-family: Lato ; text-shadow : 0 0 3px #000000; font-weight: 900;"><%= request.getAttribute("FeaturedFilm") %>
+                                        </h3>
                                     </div>
                                 </div>
                             </div>

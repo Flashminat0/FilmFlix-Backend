@@ -1,5 +1,10 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%
+    if (session.getAttribute("email") == null) {
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/login.jsp");
+        dispatcher.forward(request, response);
+    }
+
     String bannerPath = "../img/banner/";
     if (request.getAttribute("bannerlocation") == null) {
         request.setAttribute("showthisbanner", "../img/placeholder.png");

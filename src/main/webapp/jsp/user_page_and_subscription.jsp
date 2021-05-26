@@ -1,5 +1,9 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%
+    if (session.getAttribute("email") == null) {
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/login.jsp");
+        dispatcher.forward(request, response);
+    }
     if (session == null){
         request.setAttribute("userpage", "");
     }
