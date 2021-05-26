@@ -5,6 +5,7 @@
         dispatcher.forward(request, response);
     }
 
+
     if (request.getAttribute("file_Name") == null) {
         request.setAttribute("file_Name", "");
     }
@@ -145,7 +146,8 @@
                                         type="submit" id="mov-upload-file-upload-btn" data-appear-anim-style="vanishIn">
                                     File Upload
                                 </button>
-                                <form id="mov-upload-form" data-form-type="blocs-form" action="FilmAction1" method="POST">
+                                <form id="mov-upload-form" data-form-type="blocs-form" action="FilmAction1"
+                                      method="POST">
                                     <div class="form-group upload-form-begining-txt">
                                         <label>
                                             Movie File Name
@@ -168,11 +170,18 @@
                                                name="file_Path" value="<%= request.getAttribute("file_Path")%>">
                                     </div>
                                     <button class="bloc-button btn btn-d btn-lg btn-block upload-submit-btn animated vanishIn animDelay08"
-                                            type="submit" id="submit-btn" name="submit-btn" data-appear-anim-style="vanishIn">
+                                            type="submit" id="submit-btn" name="submit-btn"
+                                            data-appear-anim-style="vanishIn">
                                         Submit
                                     </button>
                                     <button class="bloc-button btn btn-d btn-lg btn-block upload-submit-btn animated vanishIn animDelay08"
-                                            type="submit" id="update-btn" name="update-btn" data-appear-anim-style="vanishIn">
+                                            type="submit" id="update-btn" name="update-btn"
+                                            data-appear-anim-style="vanishIn">
+                                        Update
+                                    </button>
+                                    <button class="bloc-button btn btn-d btn-lg btn-block upload-submit-btn animated vanishIn animDelay08"
+                                            type="submit" id="delete-btn" name="update-btn"
+                                            data-appear-anim-style="vanishIn">
                                         Update
                                     </button>
                                 </form>
@@ -181,102 +190,101 @@
                     </div>
                 </div>
                 <div class="col-sm-4 col-lg-4">
-                    <img src="../img/lazyload-ph.png" data-src="../img/banner/black-mirror-banner.jpg" class="img-fluid mx-auto d-block upload-img zoomIn animDelay02 animated pulse-hvr lazyload" alt="placeholder image" id="mov-upload-img" data-appear-anim-style="zoomIn"/>
+                    <img src="../img/lazyload-ph.png" data-src="../img/banner/black-mirror-banner.jpg"
+                         class="img-fluid mx-auto d-block upload-img zoomIn animDelay02 animated pulse-hvr lazyload"
+                         alt="placeholder image" id="mov-upload-img" data-appear-anim-style="zoomIn"/>
 
                     <form id="film-search-form" data-form-type="blocs-form" action="FilmAction2" method="POST">
                         <div class="form-group animated fadeInRight animDelay04" data-appear-anim-style="fadeInRight">
-                            <input class="form-control" placeholder="🔍  Search movie by ID" required name="search_Movie_ID">
+                            <input class="form-control" placeholder="🔍  Search movie by ID" required
+                                   name="search_Movie_ID">
                         </div>
                         <div class="animated puffIn animDelay04" data-appear-anim-style="puffIn">
                             <div class="row">
-                                <div class="col">
-                            <button class="btn btn-d btn-lg btn-23-style bloc-button" id="search-btn" name="search-btn" type="submit">
-                                Search
-                            </button>
-                                </div>
-                                <div class="col">
-                                    <button class="btn btn-d btn-lg btn-24-style bloc-button" id="delete-btn" name="delete-btn" type="submit">
-                                        Delete
-                                    </button>
-                                </div>
+                                <button class="btn btn-d btn-lg btn-23-style bloc-button" id="search-btn"
+                                        name="search-btn" type="submit">
+                                    Search
+                                </button>
+
                             </div>
                         </div>
                     </form>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- mov-upload END -->
-
-<!-- ScrollToTop Button -->
-<a class="bloc-button btn btn-d scrollToTop" onclick="scrollToTarget('1',this)">
-    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 32 32">
-        <path class="scroll-to-top-btn-icon" d="M30,22.656l-14-13-14,13"/>
-    </svg>
-</a>
-<!-- ScrollToTop Button END-->
-
-
-<!-- footer -->
-<div class="bloc l-bloc" id="footer">
-    <div class="container bloc-lg">
-        <div class="row">
-            <div class="col-md-3 col-sm-6">
-                <h4 class="mg-md text-sm-left text-center">
-                    About
-                </h4><a href="about.jsp" class="a-btn a-block footer-link">The Team</a><a href="about.jsp"
-                                                                                          class="a-btn a-block footer-link">Contact
-                Us</a>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <h4 class="mg-md text-sm-left text-center">
-                    Get the app
-                </h4><a href="get-the-app.jsp" class="a-btn a-block footer-link">Android</a><a href="get-the-app.jsp"
-                                                                                               class="a-btn a-block footer-link">iOS</a>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <h4 class="mg-md text-sm-left text-center">
-                    Follow Us
-                </h4><a href="../index.jsp" class="a-btn a-block footer-link">Twitter</a><a href="../index.jsp"
-                                                                                            class="a-btn a-block footer-link">Facebook</a>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="row">
-                    <div class="col">
-                        <a href="about.jsp" class="a-btn a-block connect-to-about-page">Connect</a>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-6 col-sm-2 col offset-sm-0">
-                        <div class="text-center">
-                            <a href="https://github.com/Flashminat0" target="_blank"><span
-                                    class="icon-md ion ion-social-github git-icon"></span></a>
-                        </div>
-                    </div>
-                    <div class="col-6 col-sm-2">
-                        <div class="text-center">
-                            <a href="https://github.com/HDHUB" target="_blank"><span
-                                    class="icon-md ion ion-social-octocat git-icon"></span></a>
-                        </div>
-                    </div>
-                    <div class="col-6 col-sm-2">
-                        <div class="text-center">
-                            <a href="https://github.com/swee76" target="_blank"><span
-                                    class="icon-md ion ion-social-github-outline git-icon"></span></a>
-                        </div>
-                    </div>
-                    <div class="col-6 col-sm-2">
-                        <div class="text-center">
-                            <a href="https://github.com/Tharushi1212" target="_blank"><span
-                                    class="icon-md ion ion-social-octocat git-icon"></span></a>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<!-- footer END -->
+    <!-- mov-upload END -->
+
+    <!-- ScrollToTop Button -->
+    <a class="bloc-button btn btn-d scrollToTop" onclick="scrollToTarget('1',this)">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 32 32">
+            <path class="scroll-to-top-btn-icon" d="M30,22.656l-14-13-14,13"/>
+        </svg>
+    </a>
+    <!-- ScrollToTop Button END-->
+
+
+    <!-- footer -->
+    <div class="bloc l-bloc" id="footer">
+        <div class="container bloc-lg">
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <h4 class="mg-md text-sm-left text-center">
+                        About
+                    </h4><a href="about.jsp" class="a-btn a-block footer-link">The Team</a><a href="about.jsp"
+                                                                                              class="a-btn a-block footer-link">Contact
+                    Us</a>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <h4 class="mg-md text-sm-left text-center">
+                        Get the app
+                    </h4><a href="get-the-app.jsp" class="a-btn a-block footer-link">Android</a><a
+                        href="get-the-app.jsp"
+                        class="a-btn a-block footer-link">iOS</a>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <h4 class="mg-md text-sm-left text-center">
+                        Follow Us
+                    </h4><a href="../index.jsp" class="a-btn a-block footer-link">Twitter</a><a href="../index.jsp"
+                                                                                                class="a-btn a-block footer-link">Facebook</a>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="row">
+                        <div class="col">
+                            <a href="about.jsp" class="a-btn a-block connect-to-about-page">Connect</a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 col-sm-2 col offset-sm-0">
+                            <div class="text-center">
+                                <a href="https://github.com/Flashminat0" target="_blank"><span
+                                        class="icon-md ion ion-social-github git-icon"></span></a>
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-2">
+                            <div class="text-center">
+                                <a href="https://github.com/HDHUB" target="_blank"><span
+                                        class="icon-md ion ion-social-octocat git-icon"></span></a>
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-2">
+                            <div class="text-center">
+                                <a href="https://github.com/swee76" target="_blank"><span
+                                        class="icon-md ion ion-social-github-outline git-icon"></span></a>
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-2">
+                            <div class="text-center">
+                                <a href="https://github.com/Tharushi1212" target="_blank"><span
+                                        class="icon-md ion ion-social-octocat git-icon"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer END -->
 
 </div>
 <!-- Main container END -->

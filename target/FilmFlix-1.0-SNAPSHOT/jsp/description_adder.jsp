@@ -130,7 +130,7 @@
                             <div class="col-lg-9">
                                 <div class="form-group">
                                     <label>
-                                        Search your details.
+                                        Search film description details.
                                     </label>>
                                 </div>
                             </div>

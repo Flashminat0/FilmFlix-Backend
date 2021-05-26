@@ -25,6 +25,7 @@ public class SearchFilmServlet extends HttpServlet {
 
         FilmUtils.selectFilm(film);
 
+        request.setAttribute("search_Movie_ID", searchMovieID);
         request.setAttribute("file_Name", film.getFileName());
         request.setAttribute("file_Size", film.getFileSize());
         request.setAttribute("file_Path", film.getFilePath());

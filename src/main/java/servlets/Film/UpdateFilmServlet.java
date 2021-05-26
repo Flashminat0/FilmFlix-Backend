@@ -18,6 +18,8 @@ public class UpdateFilmServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        //TODO
+//      int searchMovieID = Integer.parseInt((String) request.getAttribute("search_Movie_ID1"));
         int searchMovieID = Integer.parseInt(request.getParameter("search_Movie_ID"));
 
         String fileName = request.getParameter("file_Name");
