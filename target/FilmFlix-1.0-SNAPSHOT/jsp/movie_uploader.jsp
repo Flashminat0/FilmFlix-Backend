@@ -146,7 +146,7 @@
                                         type="submit" id="mov-upload-file-upload-btn" data-appear-anim-style="vanishIn">
                                     File Upload
                                 </button>
-                                <form id="mov-upload-form" data-form-type="blocs-form" action="FilmAction1"
+                                <form id="mov-upload-form" data-form-type="blocs-form" action="FilmAction"
                                       method="POST">
                                     <div class="form-group upload-form-begining-txt">
                                         <label>
@@ -180,9 +180,9 @@
                                         Update
                                     </button>
                                     <button class="bloc-button btn btn-d btn-lg btn-block upload-submit-btn animated vanishIn animDelay08"
-                                            type="submit" id="delete-btn" name="update-btn"
+                                            type="submit" id="delete-btn" name="delete-btn"
                                             data-appear-anim-style="vanishIn">
-                                        Update
+                                        Delete
                                     </button>
                                 </form>
                             </div>
@@ -194,7 +194,7 @@
                          class="img-fluid mx-auto d-block upload-img zoomIn animDelay02 animated pulse-hvr lazyload"
                          alt="placeholder image" id="mov-upload-img" data-appear-anim-style="zoomIn"/>
 
-                    <form id="film-search-form" data-form-type="blocs-form" action="FilmAction2" method="POST">
+                    <form id="film-search-form" data-form-type="blocs-form" action="SearchFilm" method="GET">
                         <div class="form-group animated fadeInRight animDelay04" data-appear-anim-style="fadeInRight">
                             <input class="form-control" placeholder="🔍  Search movie by ID" required
                                    name="search_Movie_ID">
@@ -205,10 +205,10 @@
                                         name="search-btn" type="submit">
                                     Search
                                 </button>
-
                             </div>
                         </div>
                     </form>
+
                 </div>
             </div>
         </div>

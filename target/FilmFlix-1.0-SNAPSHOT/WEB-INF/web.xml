@@ -186,22 +186,14 @@
     <!--End of Add Film-->
 
     <servlet>
-        <servlet-name>FilmAction1</servlet-name>
-        <servlet-class>servlets.FilmServletForwarder1</servlet-class>
+        <servlet-name>FilmAction</servlet-name>
+        <servlet-class>servlets.FilmServletForwarder</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>FilmAction1</servlet-name>
-        <url-pattern>/jsp/FilmAction1</url-pattern>
+        <servlet-name>FilmAction</servlet-name>
+        <url-pattern>/jsp/FilmAction</url-pattern>
     </servlet-mapping>
 
-    <servlet>
-        <servlet-name>FilmAction2</servlet-name>
-        <servlet-class>servlets.FilmServletForwarder2</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>FilmAction2</servlet-name>
-        <url-pattern>/jsp/FilmAction2</url-pattern>
-    </servlet-mapping>
     <!--End of Film-->
 
     <!--Description-->
