@@ -17,10 +17,11 @@ public class FilmUtils {
 
         try {
             conn = ConnectToDB.getCon();
-            pst = conn.prepareStatement("INSERT INTO film(fileName, fileSize, filePath) VALUES (?,?,?)");
-            pst.setString(1, film.getFileName());
-            pst.setString(2, film.getFileSize());
-            pst.setString(3, film.getFilePath());
+            pst = conn.prepareStatement("INSERT INTO film(movieID,fileName, fileSize, filePath) VALUES (?,?,?,?)");
+            pst.setString(1, String.valueOf(film.getMovieID()));
+            pst.setString(2, film.getFileName());
+            pst.setString(3, film.getFileSize());
+            pst.setString(4, film.getFilePath());
             pst.executeUpdate();
 
             conn.close();
@@ -59,7 +60,7 @@ public class FilmUtils {
 
     public static Film selectFilm(Film film) {
 
-        try{
+        try {
             conn = ConnectToDB.getCon();
             pst = conn.prepareStatement("SELECT fileName, fileSize, filePath FROM film WHERE movieID = ?",
                     ResultSet.TYPE_SCROLL_SENSITIVE,
@@ -67,7 +68,7 @@ public class FilmUtils {
             pst.setInt(1, film.getMovieID());
             ResultSet result = pst.executeQuery();
 
-            while(result.first()) {
+            while (result.first()) {
                 String fileName = result.getString("fileName");
                 film.setFileName(fileName);
                 String fileSize = result.getString("fileSize");
@@ -79,16 +80,16 @@ public class FilmUtils {
 
             conn.close();
 
-        }catch (Exception ex){
+        } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
         return film;
     }
 
-    public static boolean updateFilm(Film film){
+    public static boolean updateFilm(Film film) {
         boolean status = false;
 
-        try{
+        try {
             conn = ConnectToDB.getCon();
             pst = conn.prepareStatement("UPDATE film set  fileName = ?, fileSize = ?, filePath = ? WHERE movieID = ?");
             pst.setString(1, film.getFileName());
@@ -110,11 +111,10 @@ public class FilmUtils {
     }
 
 
-
     public static boolean deleteFilm(Film film) {
         boolean status = false;
 
-        try{
+        try {
             conn = ConnectToDB.getCon();
             pst = conn.prepareStatement("DELETE FROM film WHERE movieID = ?");
             pst.setInt(1, film.getMovieID());

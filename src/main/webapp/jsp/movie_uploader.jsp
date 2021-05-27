@@ -6,6 +6,9 @@
     }
 
 
+    if (request.getAttribute("movie_id") == null) {
+        request.setAttribute("movie_id", "");
+    }
     if (request.getAttribute("file_Name") == null) {
         request.setAttribute("file_Name", "");
     }
@@ -149,6 +152,11 @@
                                 <form id="mov-upload-form" data-form-type="blocs-form" action="FilmAction"
                                       method="POST">
                                     <div class="form-group upload-form-begining-txt">
+                                        <label>
+                                            Movie ID
+                                        </label>
+                                        <input id="mov_upload_ID_txt" class="form-control" required
+                                               name="mov_id" value="<%= request.getAttribute("movie_id")%>">
                                         <label>
                                             Movie File Name
                                         </label>
