@@ -27,7 +27,7 @@ public class SearchBannerServlet extends HttpServlet {
         String movieName = MovieUtils.SelectMovie(movie);
 
         if (statusSelectBanner != null && movieName != null) {
-            System.out.println("Success");
+            System.out.println("Success on search");
             request.setAttribute("movieid", banner.getMovieid());
             request.setAttribute("moviename", movie.getMoviename());
             request.setAttribute("bannerlocation", banner.getBannerlocation());

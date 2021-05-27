@@ -217,7 +217,7 @@
                                     <input id="movieid" name="movieid"
                                            class="form-control animated bounceInRight animDelay04" required
                                            data-appear-anim-style="bounceInRight"
-                                           placeholder=<%= request.getAttribute("movieid") %>>
+                                           value=<%= request.getAttribute("movieid") %>>
                                 </div>
                                 <div class="form-group">
                                     <label>
@@ -226,7 +226,7 @@
                                     <input id="moviename" name="moviename"
                                            class="form-control animated bounceInRight animDelay08" required
                                            data-appear-anim-style="bounceInRight"
-                                           placeholder=<%= request.getAttribute("moviename") %>>
+                                           value=<%= request.getAttribute("moviename") %>>
                                 </div>
                                 <div class="form-group">
                                     <label>
@@ -235,7 +235,7 @@
                                     <input id="bannerlocation" name="bannerlocation"
                                            class="form-control animated bounceInRight animDelay1" required
                                            data-appear-anim-style="bounceInRight"
-                                           placeholder=<%= request.getAttribute("bannerlocation") %>>
+                                           value=<%= request.getAttribute("bannerlocation") %>>
                                     <div class="object-hidden" id="edit-or-delete">
                                         <div class="row buttons-below-banner-submit animated bounceInUp animDelay1"
                                              data-appear-anim-style="bounceInUp">

@@ -216,7 +216,7 @@
                                     <%= request.getAttribute("FeaturedFilm").toString().toUpperCase() %>
                                 </h3>
                                 <p>
-                                    this film is fire pls nigga trust me watch this shit
+                                    <%= request.getAttribute("FeaturedDescription")%>
                                 </p>
                             </div>
                             <div class="col">
@@ -261,32 +261,36 @@
                     <div>
                         <div class="row row-style">
                             <div class="col">
-                                <a href="BufferMovie?movieId=<%= request.getAttribute("MovieId1")%>"><img src="../img/lazyload-ph.png"
-                                                          data-src="<%= request.getAttribute("BannerImage1") %>"
-                                                          class="img-fluid mx-auto d-block animDelay08 animated bounceInLeft lazyload"
-                                                          alt="placeholder image" data-appear-anim-style="bounceInLeft"
-                                                          id="recommend-1"/></a>
+                                <a href="BufferMovie?movieId=<%= request.getAttribute("MovieId1")%>&desc=<%= request.getAttribute("FeaturedDescription")%>"><img
+                                        src="../img/lazyload-ph.png"
+                                        data-src="<%= request.getAttribute("BannerImage1") %>"
+                                        class="img-fluid mx-auto d-block animDelay08 animated bounceInLeft lazyload"
+                                        alt="placeholder image" data-appear-anim-style="bounceInLeft"
+                                        id="recommend-1"/></a>
                             </div>
                             <div class="col">
-                                <a href="BufferMovie?movieId=<%= request.getAttribute("MovieId2")%>"><img src="../img/lazyload-ph.png"
-                                                          data-src="<%= request.getAttribute("BannerImage2") %>"
-                                                          class="img-fluid mx-auto d-block animDelay06 animated bounceInLeft lazyload"
-                                                          alt="placeholder image" data-appear-anim-style="bounceInLeft"
-                                                          id="recommend-2"/></a>
+                                <a href="BufferMovie?movieId=<%= request.getAttribute("MovieId2")%>&desc=<%= request.getAttribute("FeaturedDescription")%>"><img
+                                        src="../img/lazyload-ph.png"
+                                        data-src="<%= request.getAttribute("BannerImage2") %>"
+                                        class="img-fluid mx-auto d-block animDelay06 animated bounceInLeft lazyload"
+                                        alt="placeholder image" data-appear-anim-style="bounceInLeft"
+                                        id="recommend-2"/></a>
                             </div>
                             <div class="col">
-                                <a href="BufferMovie?movieId=<%= request.getAttribute("MovieId3")%>"><img src="../img/lazyload-ph.png"
-                                                          data-src="<%= request.getAttribute("BannerImage3") %>"
-                                                          class="img-fluid mx-auto d-block animDelay04 animated bounceInLeft lazyload"
-                                                          alt="placeholder image" data-appear-anim-style="bounceInLeft"
-                                                          id="recommend-3"/></a>
+                                <a href="BufferMovie?movieId=<%= request.getAttribute("MovieId3")%>&desc=<%= request.getAttribute("FeaturedDescription")%>"><img
+                                        src="../img/lazyload-ph.png"
+                                        data-src="<%= request.getAttribute("BannerImage3") %>"
+                                        class="img-fluid mx-auto d-block animDelay04 animated bounceInLeft lazyload"
+                                        alt="placeholder image" data-appear-anim-style="bounceInLeft"
+                                        id="recommend-3"/></a>
                             </div>
                             <div class="col">
-                                <a href="BufferMovie?movieId=<%= request.getAttribute("MovieId4")%>"><img src="../img/lazyload-ph.png"
-                                                          data-src="<%= request.getAttribute("BannerImage4") %>"
-                                                          class="img-fluid mx-auto d-block animDelay02 animated bounceInLeft lazyload"
-                                                          alt="placeholder image" data-appear-anim-style="bounceInLeft"
-                                                          id="recommend-4"/></a>
+                                <a href="BufferMovie?movieId=<%= request.getAttribute("MovieId4")%>&desc=<%= request.getAttribute("FeaturedDescription")%>"><img
+                                        src="../img/lazyload-ph.png"
+                                        data-src="<%= request.getAttribute("BannerImage4") %>"
+                                        class="img-fluid mx-auto d-block animDelay02 animated bounceInLeft lazyload"
+                                        alt="placeholder image" data-appear-anim-style="bounceInLeft"
+                                        id="recommend-4"/></a>
                             </div>
                         </div>
                         <div class="row">
@@ -294,11 +298,12 @@
                                 <span class="empty-column"></span>
                             </div>
                             <div class="col">
-                                <a href="BufferMovie?movieId=<%= request.getAttribute("MovieId5")%>"><img src="../img/lazyload-ph.png"
-                                                          data-src="<%= request.getAttribute("BannerImage5") %>"
-                                                          class="img-fluid img-last-container img-bloc-11-style none pulse-hvr animated bounceInDown mx-auto d-block lazyload"
-                                                          alt="placeholder image" data-appear-anim-style="bounceInDown"
-                                                          id="recommend-star"/></a>
+                                <a href="BufferMovie?movieId=<%= request.getAttribute("MovieId5")%>&desc=<%= request.getAttribute("FeaturedDescription")%>"><img
+                                        src="../img/lazyload-ph.png"
+                                        data-src="<%= request.getAttribute("BannerImage5") %>"
+                                        class="img-fluid img-last-container img-bloc-11-style none pulse-hvr animated bounceInDown mx-auto d-block lazyload"
+                                        alt="placeholder image" data-appear-anim-style="bounceInDown"
+                                        id="recommend-star"/></a>
                             </div>
                         </div>
                     </div>

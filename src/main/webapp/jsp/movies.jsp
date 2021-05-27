@@ -8,6 +8,7 @@
         dispatcher.forward(request, response);
     }
 
+
     if (session.getAttribute("email") == null) {
         request.setAttribute("admin-movie-upload", "");
         request.setAttribute("admin-description", "");
@@ -162,7 +163,7 @@
                         <span class="titile-icon-movie fa fa-film"></span>Movie Title here ok
                     </h3>
                     <p>
-                        Description will be here<br>ok ?
+                        <%= request.getAttribute("desc")%>
                     </p>
                 </div>
             </div>
